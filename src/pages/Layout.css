@@ -8,6 +8,8 @@ header{
     grid-template-columns: 1fr 1fr 1fr;
     color: white;
     font-family: cursive;
+    height: 210px;
+    max-height: 20%;
 }
 
 #indexkep{
@@ -24,3 +26,4 @@ img{
 .rightSide{
     text-align: right;
 }
+
