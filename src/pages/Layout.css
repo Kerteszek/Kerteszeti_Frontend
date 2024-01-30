@@ -1,0 +1,26 @@
+body{
+    margin: auto;
+}
+
+header{
+    background-color: rgb(178, 238, 218);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: white;
+    font-family: cursive;
+}
+
+#indexkep{
+    text-align: center;
+}
+
+img{
+    border-radius: 50%;
+    border: 2px white dashed;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.rightSide{
+    text-align: right;
+}
