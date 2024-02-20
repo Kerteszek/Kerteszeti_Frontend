@@ -5,11 +5,17 @@ import './Webshop.css';
 
 
 export default function Webshop() {
+    function termekMegnez(elemKode) {
+        console.log("Termék megnéz");
+        console.log(elemKode);
+
+    }
+
     return (
         <div className="webshop row mx-auto d-flex align-items-center justify-content-center">
             {TERMEKLISTA.map((elem, index) => {
                 return (<TermekKartya src={elem.kep} name={elem.scientific_name} dbSzam={elem.in_stock}
-                    ar={elem.price} key={index} />)
+                    ar={elem.price} key={elem.kode} termMegnez={termekMegnez} />)
             })}
         </div>
     )
