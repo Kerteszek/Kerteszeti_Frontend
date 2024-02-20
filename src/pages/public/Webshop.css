@@ -1,0 +1,17 @@
+.webshop {
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(168, 229, 146);
+}
+
+.webshop .cadKep .megnezGomb {
+    float: right;
+}
+
+
+.webshop .cadKep .cardPicture {
+    max-width: 100%;
+    height: 170px;
+    overflow: hidden;
+
+}

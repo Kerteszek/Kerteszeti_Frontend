@@ -8,15 +8,15 @@ import './Layout.css';
 
 const Layout = () => {
     return (
-        <>
-            <header>
+        <div className="row">
+            <header className="col-md-12">
                 <div className="rightSide"><p>Ásó, kapa,</p></div>
                 <div id="indexkep">
                     <img id="indexKep" src={indexKep} alt="itt lesz egy kép" /></div>
                 <div><p>harangvirág...</p></div>
             </header>
 
-            <Navbar expand="lg" className="bg-body-tertiary">
+            <Navbar expand="lg" className="bg-body-tertiary col-md-12">
                 <Container>
                     <Navbar.Brand href="/"></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -41,20 +41,20 @@ const Layout = () => {
                 </Container>
             </Navbar>
 
-            <aside id="asBal">
-
+            <aside id="asBal" className="col-md-2 col-sm-1">
+                Részletes keresés
 
             </aside>
-            <article>
+            <article className="col-md-8 col-sm-10">
                 {/* Ide kerül majd az útvonalak/linkek által meghatározott tartalom */}
                 <Outlet />
             </article>
-            <aside id="asJobb">
-
+            <aside id="asJobb" className="col-md-2 col-sm-1">
+                Reklám
             </aside>
-            <footer>Készítette: Dreilinger Vanessza Maja és Családi Alexandra</footer>
+            <footer className="col-md-12">Készítette: Dreilinger Vanessza Maja és Családi Alexandra</footer>
 
-        </>
+        </div>
     );
 };
 
