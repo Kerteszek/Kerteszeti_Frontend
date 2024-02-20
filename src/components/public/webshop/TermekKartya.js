@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+//{props.src}
 
 //kepek/termekek/virage1.png
 
@@ -7,7 +8,7 @@ export default function TermekKartya(props) {
 
     return (
         <Card className='col-md-3 cadKep' style={{ width: '18rem' }}>
-            <div className='cardPicture ' ><Card.Img variant="top" src={props.src} /></div>
+            <div className='cardPicture ' ><Card.Img variant="top" src="kepek/termekek/viragJoMeret5.jpg" /></div>
             <Card.Body>
                 <Card.Title>{props.name}</Card.Title>
                 <Card.Text>
