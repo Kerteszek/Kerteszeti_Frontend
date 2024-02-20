@@ -14,13 +14,13 @@ export default function Webshop() {
         return (
             <div className="webshop row mx-auto d-flex align-items-center justify-content-center">
 
-                {termekData.map((elem, index) => (
+                {termekData.map((elem) => (
                     <TermekKartya
                         src={elem.kep}
                         name={elem.scientific_name}
                         dbSzam={elem.in_stock}
                         ar={elem.price}
-                        key={index}
+                        key={elem.product_id}
                     />
                 ))}
             </div>
