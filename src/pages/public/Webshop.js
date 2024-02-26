@@ -8,8 +8,14 @@ export default function Webshop() {
 
     const termekData = Axios({ endpoint: "products" });//Fontos így kell kinéznie!!
 
+    function megnyit(index) {
+        props.megnyit(index);
+    }
+
     if (!termekData) {
-        return <div>Termékek betöltése...</div>;
+        return <div><h1>Kis türelmet.</h1>
+            <h3>A termékek betöltése folyamatban.</h3>
+        </div>;
     } else {
 
         return (
@@ -22,6 +28,8 @@ export default function Webshop() {
                         dbSzam={elem.in_stock}
                         ar={elem.price}
                         key={elem.product_id}
+                        termek_id={elem.product_id}
+                        onClick={megnyit}
                     />
                 ))}
             </div>

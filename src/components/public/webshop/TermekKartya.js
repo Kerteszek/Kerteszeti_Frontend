@@ -8,6 +8,12 @@ import KedvencButton from "../../Buttons/KedvencButton.js"
 
 export default function TermekKartya(props) {
 
+    function megnyit() {
+        console.log(props);
+        let termek_id = props.elem.termek_id;
+        props.megnyit(termek_id);
+    }
+
     return (
         <Card className='col-md-3 cadKep' style={{ width: '18rem' }}>
             <div className='cardPicture ' ><Card.Img variant="top" src="kepek/termekek/viragJoMeret5.jpg" /></div>
@@ -20,7 +26,8 @@ export default function TermekKartya(props) {
                 </Card.Text>
                 <div className='gombok'>
                     <KedvencButton />
-                    <Button className='float-right megnezGomb' variant="primary">Megnézem</Button>
+                    <Button megnyit={megnyit} 
+                        className='float-right megnezGomb' variant="primary">Megnézem</Button>
                 </div>
             </Card.Body>
         </Card>
