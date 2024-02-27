@@ -3,20 +3,21 @@ import React from 'react';
 import TermekKartya from '../../components/public/webshop/TermekKartya.js';
 import Axios from '../../model/Axios.js';
 import './Webshop.css';
-import { useNavigate } from 'react-router';
-import TermekOldal from '../../components/public/webshop/TermekOldal.js';
+import { useNavigate} from 'react-router';
+
 
 export default function Webshop() {
 
     const termekData = Axios({ endpoint: "products" });//Fontos így kell kinéznie!!
-    const navigate = useNavigate();
+    const navigate = useNavigate();    
+    let dataToPass = {};//obj
 
+    function megnyit(index) {        
+        dataToPass.termek_id = index;
 
-    function megnyit(index) {
-        console.log(index);
+          
+        navigate('/termekOldal', { state: dataToPass });
         
-        <TermekOldal termek_id={index}/>
-        navigate('/termekOldal' );
     }
 
     if (!termekData) {

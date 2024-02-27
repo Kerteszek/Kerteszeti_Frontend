@@ -6,6 +6,7 @@ export default function Termekmegnyit(props) {
         console.log(props.termek_id);
         let termek_id = props.termek_id;
         props.megnyit(termek_id);
+        //vissza kéne adnia egy ?tömböt /Listát, ami tarralmazza a termék minden szükséges adatát
     }
 
     return (

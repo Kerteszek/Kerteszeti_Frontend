@@ -22,7 +22,7 @@ function App() {
           <Route path="AboutUs" element={<AboutUs />} />
           <Route path="Webshop" element={<Webshop />} />
           <Route path="Login" element={<Login />} />
-          <Route path="termekOldal" element={<TermekOldal />} />
+          <Route path="termekOldal" element={<TermekOldal />} component={TermekOldal} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

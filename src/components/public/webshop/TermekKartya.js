@@ -1,4 +1,3 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import KedvencButton from "../../Buttons/KedvencButton.js"
 import Termekmegnyit from '../../Buttons/TermekMegnyitButton.js';
