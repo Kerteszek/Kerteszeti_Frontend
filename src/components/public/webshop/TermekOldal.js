@@ -1,6 +1,9 @@
 
 
-export default function TermekKartya(props) {
+export default function TermekOldal(props) {
+
+    console.log(props.termek_id);
+    
     return (
         <div className="termekOldal">
             <div>Hello World</div>
