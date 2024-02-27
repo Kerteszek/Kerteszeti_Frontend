@@ -20,3 +20,5 @@ export default function TermekOldal(props) {
     )
 
 }
+
+//https://medium.com/@hammadrao891/passing-data-via-links-in-react-a-guide-to-effective-data-transfer-1e0b030e2a12
