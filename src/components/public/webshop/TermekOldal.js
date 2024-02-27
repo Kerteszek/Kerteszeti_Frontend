@@ -8,15 +8,15 @@ import TermekLeiras from '../termekOldal/Termekleiras';
 export default function TermekOldal(props) {
     const location = useLocation();
     const { state } = location;
-    console.log(state);
+    //console.log(state);
 
     //console.log(termek_id);
-    console.log(props);
+    //console.log(props);
 
     return (
         <div className="termekOldal row">
             <KepGaleria />
-            <TermekLeiras />
+            <TermekLeiras termekObj={"adatok"}/>
            
             <div>Termék ID: {state.termek_id}</div>
         </div>

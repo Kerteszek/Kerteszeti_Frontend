@@ -5,22 +5,32 @@ import { KepekLISTA } from "../../../adatok/kepek.js";
 
 export default function KepGaleria(props) {
     const [aktKep, setAktKep] = useState(0);
+    
+
+    function kepvalt(termek_id) {        
+        console.log(termek_id);
+        setAktKep(termek_id);
+    
+      }
 
     return (
-        <div className="kepGaleria row col-md-6" >
-            <div className="nagyKep col-md-12">
-                <Kep key="1000" src="kepek/termekek/viragJoMeret2.jpg" termek_id="1000" />
+        <div className="kepGaleria row col-md-7" >
+            <div className="nagyKep col-md-12 text-center">
+                <Kep key="0" src={[aktKep]} termek_id={aktKep}/>
+               
             </div>
+            <div className="row" >
+                {KepekLISTA.map((elem, termek_id) => {
+                    return (
+                        <div className="kisKepek col-md-3 ">
+                            <Kep adatok={elem} key={elem.termek_id} kepvalt={kepvalt}/>
+                            {elem}
+                        </div>
 
-            {KepekLISTA.map((elem, index) => {
-                return (
-                    <div className="kisKepek col-md-3">
-                        <Kep key={elem.termek_id} src={elem.kep} termek_id={elem.termek_id} />
-                    </div>
+                    )
 
-                )
-
-            })}
+                })}
+            </div>
         </div>
     )
 

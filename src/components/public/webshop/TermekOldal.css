@@ -1,7 +1,7 @@
 .kisKepek .TermekKep {
-    width: 100%;
-    max-width: 200px;
-    max-height: 200px;
+
+    max-width: 170px;
+    max-height: 100px;
     overflow: hidden;
 }
 
@@ -9,9 +9,16 @@
     width: 100%;
     max-width: 450px;
     max-height: 450px;
-    overflow: hidden;
 }
 
 .termekOldal {
     background-color: lightblue;
 }
+
+.kepGaleria {
+    gap: 5px;
+}
+
+/* div {
+    border: 1px solid black;
+} */
