@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import KedvencButton from "../../Buttons/KedvencButton.js"
+import Termekmegnyit from '../../Buttons/TermekMegnyitButton.js';
 
 //{props.src}
 
@@ -8,9 +9,8 @@ import KedvencButton from "../../Buttons/KedvencButton.js"
 
 export default function TermekKartya(props) {
 
-    function megnyit() {
-        console.log(props);
-        let termek_id = props.elem.termek_id;
+    function megnyit(termek_id) {
+        console.log(termek_id);
         props.megnyit(termek_id);
     }
 
@@ -26,8 +26,7 @@ export default function TermekKartya(props) {
                 </Card.Text>
                 <div className='gombok'>
                     <KedvencButton />
-                    <Button megnyit={megnyit} 
-                        className='float-right megnezGomb' variant="primary">Megnézem</Button>
+                    <Termekmegnyit megnyit={megnyit} termek_id={props.termek_id} />
                 </div>
             </Card.Body>
         </Card>

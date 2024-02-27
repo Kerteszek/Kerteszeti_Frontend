@@ -9,7 +9,7 @@ export default function Webshop() {
     const termekData = Axios({ endpoint: "products" });//Fontos így kell kinéznie!!
 
     function megnyit(index) {
-        props.megnyit(index);
+        console.log(index);
     }
 
     if (!termekData) {
@@ -29,7 +29,7 @@ export default function Webshop() {
                         ar={elem.price}
                         key={elem.product_id}
                         termek_id={elem.product_id}
-                        onClick={megnyit}
+                        megnyit={megnyit}
                     />
                 ))}
             </div>
