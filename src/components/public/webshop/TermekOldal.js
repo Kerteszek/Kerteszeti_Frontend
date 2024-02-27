@@ -1,5 +1,8 @@
 import { useLocation } from 'react-router-dom';
 import React from 'react';
+import KepGaleria from '../termekOldal/KepGaleria';
+import './TermekOldal.css';
+import TermekLeiras from '../termekOldal/Termekleiras';
 
 
 export default function TermekOldal(props) {
@@ -11,9 +14,10 @@ export default function TermekOldal(props) {
     console.log(props);
 
     return (
-        <div className="termekOldal">
-            <div>Hello World</div>
-            <br />
+        <div className="termekOldal row">
+            <KepGaleria />
+            <TermekLeiras />
+           
             <div>Termék ID: {state.termek_id}</div>
         </div>
 
