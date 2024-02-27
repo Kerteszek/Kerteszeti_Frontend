@@ -1,5 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -50,6 +51,7 @@ const Layout = () => {
                 <Outlet />
             </article>
             <aside id="asJobb" className="col-md-2 col-sm-1">
+                <Card.Img variant="top" src="kepek/reklam.jpg" />
                 Reklám
             </aside>
             <footer className="col-md-12">Készítette: Dreilinger Vanessza Maja és Családi Alexandra</footer>
