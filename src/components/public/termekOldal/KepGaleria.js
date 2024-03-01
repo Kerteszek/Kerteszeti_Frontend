@@ -17,7 +17,7 @@ export default function KepGaleria(props) {
         <div className="kepGaleria row col-md-7" >
             <div className="nagyKep col-md-12 text-center">
                 {console.log(KepekLISTA[aktKep])}
-                <Kep adatok={KepekLISTA[aktKep]}  />
+                <Kep adatok={aktKep}  />
                 
             </div>
             <div className="row" >
@@ -26,7 +26,6 @@ export default function KepGaleria(props) {
                     KepekLISTA.map((elem, index) => {
 
                         return (
-
                             <div className="kisKepek col-md-3 ">
                                 <Kep adatok={elem} key={index} kepvalt={kepvalt} />
 
