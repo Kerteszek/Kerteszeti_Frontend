@@ -10,6 +10,6 @@ export const KepekLISTA = [
     },
     {
         termek_id: 1003, kep: "kepek/termekek/1000-700/virag6.jpg"
-    },
+    }
     
 ];
