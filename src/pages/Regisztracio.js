@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function Regisztracion() {
     return (
-        <div className="login m-auto" style={{ maxWidth: "400px" }}>
+        <div className="regisztracion m-auto" style={{ maxWidth: "400px" }}>
             <h1 className="text-center">Bejelentkezés</h1>
             <form>
                 <div className="mb-3 mt-3">
@@ -12,6 +12,14 @@ export default function Login() {
                     </label>
                     <input
                         type="email"
+
+                        // value beállítása a state értékére
+                        value={email}
+                        // state értékének módosításváltozik a beviteli mező tartalma
+                        onChange={(e) => {
+                            setEmail(e.target.value);
+                        }}
+
                         className="form-control"
                         id="email"
                         placeholder="email"
