@@ -9,6 +9,7 @@ import AboutUs from './pages/public/AboutUs';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Webshop from './pages/public/Webshop';
 import TermekOldal from './components/public/webshop/TermekOldal';
+import Admin from './pages/admin/Admin';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="AboutUs" element={<AboutUs />} />
           <Route path="Webshop" element={<Webshop />} />
           <Route path="Login" element={<Login />} />
+          <Route path="Admin" element={<Admin />} />
           <Route path="termekOldal" element={<TermekOldal />} component={TermekOldal} />
           <Route path="*" element={<NoPage />} />
         </Route>
