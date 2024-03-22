@@ -12,7 +12,9 @@ export default function Admin() {
                         <Card.Text>
                             Itt tudod módosítani az termékeket.
                         </Card.Text>
-                        <Button variant="primary" id='termod'>Termékek módosítása</Button>
+                        <Button variant="primary" id='termod'>
+                            <a href='/admintermekek'>Termékek módosítása</a>
+                        </Button>
                     </Card.Body>
                 </Card>
 
@@ -22,7 +24,9 @@ export default function Admin() {
                         <Card.Text>
                             Új termékek érkeztek! Itt felviheted.
                         </Card.Text>
-                        <Button variant="primary" id='termfel'>Termékek felivtele</Button>
+                        <Button variant="primary" id='termfel'>
+                            <a href='/admintermekek'>Termékek felivtele</a>
+                        </Button>
                     </Card.Body>
                 </Card>
 
@@ -32,7 +36,9 @@ export default function Admin() {
                         <Card.Text>
                             Itt módosíthatod a felhasználókat.
                         </Card.Text>
-                        <Button variant="primary" id='fhmod'>Felhasználók módosítása</Button>
+                        <Button variant="primary" id='fhmod'>
+                            <a href='/admintermekek'>Felhasználók módosítása</a>
+                        </Button>
                     </Card.Body>
                 </Card>
             </section>

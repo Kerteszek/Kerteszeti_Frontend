@@ -23,6 +23,6 @@ header {
     max-height: 200px;
 }
 
-.rightSide {
-    text-align: right;
+.rightSide{
+    display: inline-block;
 }

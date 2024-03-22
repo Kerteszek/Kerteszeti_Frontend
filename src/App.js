@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Webshop from './pages/public/Webshop';
 import TermekOldal from './components/public/webshop/TermekOldal';
 import Admin from './pages/admin/Admin';
+import AdminTermekek from './pages/admin/AdminTermekek';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="Webshop" element={<Webshop />} />
           <Route path="Login" element={<Login />} />
           <Route path="Admin" element={<Admin />} />
+          <Route path="AdminTermekek" element={<AdminTermekek />} />
           <Route path="termekOldal" element={<TermekOldal />} component={TermekOldal} />
           <Route path="*" element={<NoPage />} />
         </Route>
