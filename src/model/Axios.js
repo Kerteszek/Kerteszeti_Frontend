@@ -29,3 +29,4 @@ export default function Axios({ endpoint }) {
 
     return data;
 }
+

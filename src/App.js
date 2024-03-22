@@ -1,15 +1,15 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from './pages/Main';
-import Public from './pages/public/Public';
-import Login from './pages/Login';
-import NoPage from './pages/NoPage';
-import Layout from './pages/Layout';
-import AboutUs from './pages/public/AboutUs';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Webshop from './pages/public/Webshop';
-import TermekOldal from './components/public/webshop/TermekOldal';
-
+import Main from "./pages/Main";
+import Public from "./pages/public/Public";
+import Login from "./pages/Login";
+import NoPage from "./pages/NoPage";
+import Layout from "./pages/Layout";
+import AboutUs from "./pages/public/AboutUs";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Webshop from "./pages/public/Webshop";
+import TermekOldal from "./components/public/webshop/TermekOldal";
+import Regisztracion from "./pages/Regisztracio";
 
 function App() {
   return (
@@ -22,7 +22,12 @@ function App() {
           <Route path="AboutUs" element={<AboutUs />} />
           <Route path="Webshop" element={<Webshop />} />
           <Route path="Login" element={<Login />} />
-          <Route path="termekOldal" element={<TermekOldal />} component={TermekOldal} />
+          <Route path="regisztracio" element={<Regisztracion />} />
+          <Route
+            path="termekOldal"
+            element={<TermekOldal />}
+            component={TermekOldal}
+          />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
