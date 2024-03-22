@@ -4,7 +4,7 @@ import './Admin.css';
 
 export default function Admin() {
     return (
-        <div className="admin">Csak belépéssel....
+        <div className="admin">
             <section>
                 <Card>
                     <Card.Body>
