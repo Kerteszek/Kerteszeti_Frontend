@@ -1,0 +1,14 @@
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+div {
+    display: inline-block;
+    text-align: center;
+}
+
+p {
+    text-align: left;
+}
