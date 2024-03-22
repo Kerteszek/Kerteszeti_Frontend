@@ -13,8 +13,10 @@ export default function Admin() {
                             Itt tudod módosítani az termékeket.
                         </Card.Text>
                         <Button variant="primary" id='termod'>
-                            <a href='/admintermekek'>Termékek módosítása</a>
+                            <a href='/termekeklista'>Termékek módosítása</a>
+                            
                         </Button>
+                        //table
                     </Card.Body>
                 </Card>
 
@@ -25,8 +27,10 @@ export default function Admin() {
                             Új termékek érkeztek! Itt felviheted.
                         </Card.Text>
                         <Button variant="primary" id='termfel'>
-                            <a href='/admintermekek'>Termékek felivtele</a>
+                            <a href='/termekekfelvitel'>Termékek felivtele</a>
+                            
                         </Button>
+                        Ürlappal egyes termékeknél, csoportosnál: excel-ből
                     </Card.Body>
                 </Card>
 
@@ -37,7 +41,7 @@ export default function Admin() {
                             Itt módosíthatod a felhasználókat.
                         </Card.Text>
                         <Button variant="primary" id='fhmod'>
-                            <a href='/admintermekek'>Felhasználók módosítása</a>
+                            <a href='/felhasznaloklista'>Felhasználók módosítása</a>
                         </Button>
                     </Card.Body>
                 </Card>

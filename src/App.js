@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Webshop from './pages/public/Webshop';
 import TermekOldal from './components/public/webshop/TermekOldal';
 import Admin from './pages/admin/Admin';
-import AdminTermekek from './pages/admin/AdminTermekek';
+import AdminTermekek from './pages/admin/TermekekLista';
 
 
 function App() {
