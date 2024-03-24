@@ -10,6 +10,13 @@ export default function Login() {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
+      const adat = {
+        email: email,
+        password: password,
+      };
+
+
+      console.log(adat);
       await axios.post("/login", { email, password });
       //ide a backend neve kell ha máshogy hívják  akkor íg kell kinéznie
       //user_email: email, ...
@@ -67,7 +74,7 @@ export default function Login() {
           </button>
 
           <p>
-            Még nincs felhaszálóneve?
+            Még nincs regisztrálva?
             <Link className="nav-link text-info" to="/regisztracio">
               Regisztráció
             </Link>

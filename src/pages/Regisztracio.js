@@ -6,28 +6,43 @@ export default function Regisztracion() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [password_confirmation, setPasswConformation] = useState("");
+  const [password_confirmation, setPasswordConfirmation] = useState("");
+  const [permission, setPermission] = useState(2);
   const navigate = useNavigate();
 
   const handleRegisztracio = async (event) => {
     event.preventDefault();
+
     try {
+      const adat = {
+        name: name,
+        email: email,
+        password: password,
+        //password_confirmation: password_confirmation,
+        permission: permission,
+      };
+
+
+      console.log(adat);
+      
       await axios.post("/register", {
         name,
         email,
         password,
-        password_confirmation: password_confirmation,
+        //password_confirmation: setPasswordConfirmation,
+        //permission,
       });
 
-      setName();
+      setName("");
       setEmail("");
       setPassword("");
-      setPasswConformation("");
+      //setPasswordConfirmation("");
+    //  setPermission(2);
 
-      navigate("/"); //főoldalra visz
+      navigate("/");
       console.log("Regisztráció megtörtént!");
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -100,7 +115,7 @@ export default function Regisztracion() {
           <input
             type="password"
             value={password_confirmation}
-            onChange={(e) => setPasswConformation(e.target.value)}
+            onChange={(e) => setPasswordConfirmation(e.target.value)}
             className="form-control"
             id="pwdujra"
             placeholder="jelszó újra"
