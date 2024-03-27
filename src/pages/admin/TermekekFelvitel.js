@@ -1,8 +1,6 @@
-import Table from 'react-bootstrap/Table';
-
-export default function TermekekLista() {
+export default function TermekekFelvitel() {
     return (
-        <div className="termekeklista">admin termékek módosítása
+        <div className="termekekfelvitel">admin termékek felvitele
             <section>
                 <form>
                     

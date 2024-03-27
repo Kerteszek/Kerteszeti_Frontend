@@ -2,7 +2,7 @@ import Table from 'react-bootstrap/Table';
 
 export default function FelhasznalokLista() {
     return (
-        <div className="felhasznaloklista">admin termékek módosítása
+        <div className="felhasznaloklista">admin felhasznalók módosítása
             <section>
                 <Table striped bordered hover>
                     <thead>
