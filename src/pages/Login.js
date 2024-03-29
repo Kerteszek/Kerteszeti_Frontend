@@ -1,22 +1,23 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "../api/axios";
+import { Link } from "react-router-dom";
+import useAuthContext from "../context/AuthContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([]);
-  const navigate = useNavigate();
-
-  
+  const { login, errors } = useAuthContext();
 
   const handleLogin = async (event) => {
     event.preventDefault();
-   // await csrf();
-   
+    const adat = {
+      email: email,
+      password: password,
+    };
+    login(adat);
   };
 
   return (
+
     <div className="login m-auto" style={{ maxWidth: "400px" }}>
       <h1 className="text-center">Bejelentkezés</h1>
       <form onSubmit={handleLogin}>

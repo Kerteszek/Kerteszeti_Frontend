@@ -5,41 +5,65 @@ import { useNavigate } from "react-router-dom";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+    const navigate = useNavigate();
     const [user, setUser] = useState(null);
-    const [errors, setErrors] = useState([]);
-    const navigate = useNavigate();    
+    const [errors, setErrors] = useState({
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+    });
 
+    let token = "";
+    const csrf = () =>
+        axios.get("/token").then((response) => {
+            token = response.data;
+        });
 
-    const csrf = () => axios.get('/sanctum/csrf-cookie');
+    //const csrf = () => axios.get('/sanctum/csrf-cookie');
 
     const getUser = async () => {
         const { data } = await axios.get('/api/user');
         setUser(data);
+    };
 
-    }
-
-    const login = async ({ email, password }) => {
-        await csrf();
+    const login = async ({ ...adat }) => {
+        await csrf()
+        //console.log(token)
+        adat._token = token;
 
         try {
-            const adat = {
-                email: email,
-                password: password,
-            };
-
-            console.log(adat);
-            await axios.post("/login", { email, password });
-            navigate("/"); //főoldalra visz
-            console.log("bejelentkezve.");
-
+            await axios.post("/login", adat);
+            getUser();
+            navigate("/");
         } catch (e) {
-            console.log(e.response.status);
             if (e.response.status === 422) {
-                setErrors(e.response.data.errors);
+                setErrors(e.response.adat.errors);
             }
             console.log(e);
         }
-    }
+    };
+
+    const register = async ({ adat }) => {
+        await csrf();
+        try {
+            await axios.post("/register", { adat });
+            getUser();
+            navigate("/");
+        } catch (e) {
+            if (e.response.status === 422) {
+                setErrors(e.response.adat.errors);
+            }
+            console.log(e);
+        }
+    };
+
+    return (<AuthContext.Provider
+        value={{ user, errors, getUser, login, register }}
+    >
+        {children}
+    </AuthContext.Provider>
+    )
 };
 
 

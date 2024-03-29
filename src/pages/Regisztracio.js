@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "../api/axios";
+import  useAuthContext  from "../context/AuthContext";
 
 export default function Regisztracion() {
   const [name, setName] = useState("");
