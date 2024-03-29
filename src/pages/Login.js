@@ -5,28 +5,15 @@ import axios from "../api/axios";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState([]);
   const navigate = useNavigate();
+
+  
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    try {
-      const adat = {
-        email: email,
-        password: password,
-      };
-
-
-      console.log(adat);
-      await axios.post("/login", { email, password });
-      //ide a backend neve kell ha máshogy hívják  akkor íg kell kinéznie
-      //user_email: email, ...
-      setEmail("");
-      setPassword("");
-      navigate("/"); //főoldalra visz
-      console.log("bejelentkezve.");
-    } catch (e) {
-      console.log(e);
-    }
+   // await csrf();
+   
   };
 
   return (
@@ -47,9 +34,10 @@ export default function Login() {
             name="email"
           />
         </div>
-        <div>
-          <span className="text-danger">hiba</span>
-        </div>
+        {errors.email && (
+          <div>
+            <span className="text-danger">{errors.email[0]}</span>
+          </div>)}
         <div className="mb-3">
           <label htmlFor="pwd" className="form-label">
             Jelszó:
@@ -63,9 +51,10 @@ export default function Login() {
             placeholder="jelszó"
             name="pwd"
           />
-          <div>
-            <span className="text-danger">hiba</span>
-          </div>
+          {errors.password && (
+            <div>
+              <span className="text-danger">{errors.password[0]}</span>
+            </div>)}
         </div>
 
         <div className=" text-center">
