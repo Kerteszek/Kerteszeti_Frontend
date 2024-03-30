@@ -42,7 +42,7 @@ const Layout = () => {
 
                         {user ? (
                             <>
-                                <NavDropdown title="Profilom" id="basic-nav-dropdown">
+                                <NavDropdown title="Profilom" id="basic-nav-dropdown" drop="start">
                                     <h6>Helló {user?.name}!</h6>
 
                                     <NavDropdown.Item href="/adatlap">
@@ -54,6 +54,7 @@ const Layout = () => {
                                         Kijelentkezés
                                     </NavDropdown.Item>
                                 </NavDropdown>
+
                             </>
                         ) : (
                             <Container className="rightSide">
@@ -61,6 +62,7 @@ const Layout = () => {
                             </Container>
 
                         )}
+                        <Nav.Link href="/adatlap">   Kosár</Nav.Link>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
