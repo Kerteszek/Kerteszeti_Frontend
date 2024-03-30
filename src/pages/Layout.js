@@ -39,30 +39,31 @@ const Layout = () => {
                             </NavDropdown>
                             <Nav.Link href="/AboutUs">Rólunk</Nav.Link>
                         </Nav>
+                        <Nav>
+                            {user ? (
+                                <>
+                                    <NavDropdown title="Profilom" id="basic-nav-dropdown" drop="start">
+                                        <h6>Helló {user?.name}!</h6>
 
-                        {user ? (
-                            <>
-                                <NavDropdown title="Profilom" id="basic-nav-dropdown" drop="start">
-                                    <h6>Helló {user?.name}!</h6>
+                                        <NavDropdown.Item href="/adatlap">
+                                            Adataim
+                                        </NavDropdown.Item>
+                                        <NavDropdown.Item href="/adatlap">Rendeléseim</NavDropdown.Item>
+                                        <NavDropdown.Divider />
+                                        <NavDropdown.Item className="text-danger" onClick={logout}>
+                                            Kijelentkezés
+                                        </NavDropdown.Item>
+                                    </NavDropdown>
 
-                                    <NavDropdown.Item href="/adatlap">
-                                        Adataim
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href="/adatlap">Rendeléseim</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item className="text-danger" onClick={logout}>
-                                        Kijelentkezés
-                                    </NavDropdown.Item>
-                                </NavDropdown>
+                                </>
+                            ) : (
+                                <Container className="rightSide">
+                                    <Nav.Link href="/login">Bejelentkezés</Nav.Link>
+                                </Container>
 
-                            </>
-                        ) : (
-                            <Container className="rightSide">
-                                <Nav.Link href="/login">Bejelentkezés</Nav.Link>
-                            </Container>
-
-                        )}
-                        <Nav.Link href="/adatlap">   Kosár</Nav.Link>
+                            )}
+                            <Nav.Link href="/adatlap">   Kosár</Nav.Link>
+                        </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
