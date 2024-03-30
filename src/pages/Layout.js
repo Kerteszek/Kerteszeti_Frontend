@@ -6,8 +6,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import indexKep from '../kepek/indexKep.png';
 import './Layout.css';
+import useAuthContext from "../context/AuthContext";
+import { Button } from "react-bootstrap";
 
 const Layout = () => {
+
+    const { user, logout } = useAuthContext();
     return (
         <div className="row">
             <header className="col-md-12">
@@ -35,10 +39,29 @@ const Layout = () => {
                             </NavDropdown>
                             <Nav.Link href="/AboutUs">Rólunk</Nav.Link>
                         </Nav>
+
+                        {user ? (
+                            <>
+                                <NavDropdown title="Profilom" id="basic-nav-dropdown">
+                                    <h6>Helló {user?.name}!</h6>
+
+                                    <NavDropdown.Item href="/adatlap">
+                                        Adataim
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item href="/adatlap">Rendeléseim</NavDropdown.Item>
+                                    <NavDropdown.Divider />
+                                    <NavDropdown.Item className="text-danger" onClick={logout}>
+                                        Kijelentkezés
+                                    </NavDropdown.Item>
+                                </NavDropdown>
+                            </>
+                        ) : (
+                            <Container className="rightSide">
+                                <Nav.Link href="/login">Bejelentkezés</Nav.Link>
+                            </Container>
+
+                        )}
                     </Navbar.Collapse>
-                </Container>
-                <Container className="rightSide">
-                    <Nav.Link href="/login">Bejelentkezés</Nav.Link>
                 </Container>
             </Navbar>
 
@@ -61,3 +84,5 @@ const Layout = () => {
 };
 
 export default Layout;
+
+

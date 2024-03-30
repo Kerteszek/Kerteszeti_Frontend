@@ -5,15 +5,19 @@ import useAuthContext from "../context/AuthContext";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, errors } = useAuthContext();
+  const { loginRegister, errors } = useAuthContext();
 
-  const handleLogin = async (event) => {
-    event.preventDefault();
+
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
     const adat = {
       email: email,
       password: password,
     };
-    login(adat);
+    console.log(adat);
+    loginRegister(adat, "/login");
   };
 
   return (
@@ -39,6 +43,7 @@ export default function Login() {
           <div>
             <span className="text-danger">{errors.email[0]}</span>
           </div>)}
+
         <div className="mb-3">
           <label htmlFor="pwd" className="form-label">
             Jelszó:

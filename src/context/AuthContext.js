@@ -17,57 +17,54 @@ export const AuthProvider = ({ children }) => {
     let token = "";
     const csrf = () =>
         axios.get("/token").then((response) => {
+            console.log(response);
             token = response.data;
         });
 
-    //const csrf = () => axios.get('/sanctum/csrf-cookie');
-
     const getUser = async () => {
-        const { data } = await axios.get('/api/user');
+        const { data } = await axios.get("/api/user");
         setUser(data);
     };
-
-    const login = async ({ ...adat }) => {
+    const logout = async () => {
         await csrf()
-        //console.log(token)
+        console.log(token)
+        axios.post("/logout", { _token: token }).then((resp) => {
+            setUser(null);
+            console.log(resp);
+        });
+    };
+
+    const loginRegister = async ({ ...adat }, vegpont) => {
+        await csrf()
+        console.log(token)
         adat._token = token;
+        console.log(adat)
 
-        try {
-            await axios.post("/login", adat);
-            getUser();
-            navigate("/");
-        } catch (e) {
-            if (e.response.status === 422) {
-                setErrors(e.response.adat.errors);
-            }
-            console.log(e);
-        }
-    };
-
-    const register = async ({ adat }) => {
         await csrf();
+
         try {
-            await axios.post("/register", { adat });
-            getUser();
+            await axios.post(vegpont, adat);
+            console.log("Sikeres belépés/ regisztráció!");
+
+            await getUser();
+
             navigate("/");
-        } catch (e) {
-            if (e.response.status === 422) {
-                setErrors(e.response.adat.errors);
+        } catch (error) {
+            console.log(error);
+            if (error.response.status === 422) {
+                setErrors(error.response.data.errors);
             }
-            console.log(e);
         }
     };
 
-    return (<AuthContext.Provider
-        value={{ user, errors, getUser, login, register }}
-    >
-        {children}
-    </AuthContext.Provider>
-    )
+    return (
+        <AuthContext.Provider
+            value={{ logout, loginRegister, errors, getUser, user }}
+        >
+            {children}
+        </AuthContext.Provider>
+    );
 };
-
-
 export default function useAuthContext() {
     return useContext(AuthContext);
 }
-

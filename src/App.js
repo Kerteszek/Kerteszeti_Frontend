@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Webshop from "./pages/public/Webshop";
 import TermekOldal from "./components/public/webshop/TermekOldal";
 import Regisztracion from "./pages/Regisztracio";
+import Adatlap from "./components/public/felhasznalo/AdatLap";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="Webshop" element={<Webshop />} />
         <Route path="Login" element={<Login />} />
         <Route path="regisztracio" element={<Regisztracion />} />
+        <Route path="adatlap" element={<Adatlap />} />
         <Route
           path="termekOldal"
           element={<TermekOldal />}
