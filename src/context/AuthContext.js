@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import axios from "../api/axios";
 import { useNavigate } from "react-router-dom";
 
@@ -14,6 +14,13 @@ export const AuthProvider = ({ children }) => {
         password_confirmation: "",
     });
 
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
+
     let token = "";
     const csrf = () =>
         axios.get("/token").then((response) => {
@@ -25,12 +32,17 @@ export const AuthProvider = ({ children }) => {
         const { data } = await axios.get("/api/user");
         setUser(data);
     };
+
     const logout = async () => {
-        await csrf()
-        console.log(token)
+        await csrf();
+        console.log(token);
         axios.post("/logout", { _token: token }).then((resp) => {
             setUser(null);
             console.log(resp);
+            // Clear user from local storage on logout
+            localStorage.removeItem('user');
+            // Redirect to home page or wherever appropriate
+            navigate("/");
         });
     };
 
@@ -48,6 +60,8 @@ export const AuthProvider = ({ children }) => {
 
             await getUser();
 
+            localStorage.setItem('user', JSON.stringify(adat));
+            
             navigate("/");
         } catch (error) {
             console.log(error);
