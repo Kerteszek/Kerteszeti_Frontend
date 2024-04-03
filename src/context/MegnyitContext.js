@@ -11,12 +11,12 @@ export const KivalasztProvider = ({ children }) => {
         const a = kivalasztottLista;
         a.push(ertek);
         console.log(a);
-        setKivalasztottLista([...a]);
+        setKivaelasztottLista([...a]);
     }
 
     return (
         <MegnyitContext.Provider
-            value={{ kivalasztottLista, setKivalasztottLista, kivalaszt }}
+            value={{ kivalasztottLista, setKivaelasztottLista, kivalaszt }}
         >
             {children}
         </MegnyitContext.Provider>

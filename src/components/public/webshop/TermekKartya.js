@@ -15,11 +15,12 @@ export default function TermekKartya(props) {
 
     return (
         <Card className='col-md-3 cadKep' style={{ width: '18rem' }}>
-            <div className='cardPicture ' ><Card.Img variant="top" src="kepek/termekek/viragJoMeret5.jpg" /></div>
+            <div className='cardPicture ' ><Card.Img variant="top" src="kepek/termekek/boritokep/{props.src}" /></div>
             <Card.Body>
                 <Card.Title>{props.name}</Card.Title>
                 <Card.Text>
-                    Raktáron: {props.dbSzam} <br />
+                    Szín: {props.color} <br />
+                    kiszerelés: {props.tipus} <br />
                     Ára: {props.ar}
 
                 </Card.Text>

@@ -8,7 +8,7 @@ import Layout from "./pages/Layout";
 import AboutUs from "./pages/public/AboutUs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Webshop from "./pages/public/Webshop";
-import TermekOldal from "./components/public/webshop/TermekOldal";
+import TermekOldal from "./pages/public/TermekOldal";
 import Regisztracion from "./pages/Regisztracio";
 import Adatlap from "./components/public/felhasznalo/AdatLap";
 
@@ -26,9 +26,7 @@ function App() {
         <Route path="Login" element={<Login />} />
         <Route path="regisztracio" element={<Regisztracion />} />
         <Route path="adatlap" element={<Adatlap />} />
-        <Route
-          path="termekOldal"
-          element={<TermekOldal />}
+        <Route path="termekOldal" element={<TermekOldal />}
           component={TermekOldal}
         />
         <Route path="*" element={<NoPage />} />

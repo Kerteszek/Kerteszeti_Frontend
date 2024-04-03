@@ -1,4 +1,5 @@
-import '../webshop/TermekOldal.css';
+import '../../../pages/public/TermekOldal.css';
+
 export default function Kep(props) {
 
     // console.log(props);
