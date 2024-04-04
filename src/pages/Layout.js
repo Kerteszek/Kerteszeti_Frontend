@@ -77,8 +77,7 @@ const Layout = () => {
                 <Outlet />
             </article>
             <aside id="asJobb" className="col-md-2 col-sm-1">
-                <Card.Img variant="top" src="kepek/reklam.jpg" />
-                Reklám
+                <Card.Img variant="top" className="reklam" src="kepek/banner.jpg" />                
             </aside>
             <footer className="col-md-12">Készítette: Dreilinger Vanessza Maja és Családi Alexandra</footer>
 
