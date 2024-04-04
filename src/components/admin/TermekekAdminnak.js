@@ -10,16 +10,28 @@ export default function FelhasznalokListazasa(){
             <thead>
                 <tr>
                     <th>Hivatalos név</th>
-                    <th>Közönséges név</th>
-                    <th>Hozzáférés</th>
+                    <th>Státusz</th>
+                    <th>Típus</th>
+                    <th>Szín</th>
+                    <th>Kiszerelés</th>
+                    <th>Egységár</th>
+                    <th>Készlet</th>
+                    <th>Lefoglalt mennyiség</th>
+                    <th>Kedvezményes</th>
                 </tr>
             </thead>
             <tbody>
                 {termekek.map(termek => {
                     <tr key={termek.id}>
-                        <td>{termek.latinname}</td>
-                        <td>{termek.name}</td>
-                        <td>{termek.permission}</td>
+                        <td>{termek.scientific_name}</td>
+                        <td>{termek.status}</td>
+                        <td>{termek.type}</td>
+                        <td>{termek.color}</td>
+                        <td>{termek.unit}</td>
+                        <td>{termek.price}</td>
+                        <td>{termek.in_stock}</td>
+                        <td>{termek.reserved}</td>
+                        <td>{termek.priority}</td>
                     </tr>
                 })}
             </tbody>

@@ -11,82 +11,14 @@ export default function NovenyekFelvitel() {
 
                 <Form>
                     <Form.Group className="mb-3" controlId="latinNev">
-                        <Form.Label>Latin név:</Form.Label>
+                        <Form.Label>Tudományos név:</Form.Label>
                         <Form.Control type="text" />
                     </Form.Group>
                     <br />
 
-                    <Form.Group className="mb-3" controlId="statusz">
-                        <Form.Select defaultValue="mag">
-                            <option>Kérlek válassz állapotot!</option>
-                            <option value="false">mag</option>
-                            <option value="true">élő</option>
-                        </Form.Select>
-                    </Form.Group>
-                    <br />
-
-                    <Form.Group className="mb-3" controlId="tipus">
-                        <Form.Select defaultValue="haszonnövény">
-                            <option>Kérlek válassz típust!</option>
-                            <option value="false">haszonnövény</option>
-                            <option value="true">Dísznövény</option>
-                        </Form.Select>
-                    </Form.Group>
-                    <br />
-
-                    <Form.Group className="mb-3" controlId="szin">
-                        <Form.Select defaultValue="Kérlek válassz színt vagy hagyd üresen!">
-                            <option value="null">Kérlek válassz színt vagy hagyd üresen!</option>
-                            <option value="vörös">vörös</option>
-                            <option value="piros">piros</option>
-                            <option value="rózsaszín">rózsaszín</option>
-                            <option value="lila">lila</option>
-                            <option value="kék">kék</option>
-                            <option value="sárga">sárga</option>
-                            <option value="narancs">narancs</option>
-                            <option value="zöld">zöld</option>
-                            <option value="fehér">fehér</option>
-                            <option value="fekete">fekete</option>
-                        </Form.Select>
-                    </Form.Group>
-                    <br />
-
-                    <Form.Group className="mb-3" controlId="kiszereles">
-                        <Form.Select defaultValue="Kérlek válassz kiszerelést!">
-                            <option>Kérlek válassz kiszerelést!</option>
-                            <option value="5cm cserép">5cm cserép</option>
-                            <option value="12cm cserép">piros</option>
-                            <option value="5l cserép">rózsaszín</option>
-                            <option value="gyökércsomagolt">lila</option>
-                            <option value="5g">kék</option>
-                            <option value="10g">sárga</option>
-                            <option value="200g">narancs</option>
-                            <option value="1kg">zöld</option>
-                        </Form.Select>
-                    </Form.Group>
-                    <br />
-
-                    <Form.Group className="mb-3" controlId="termekara">
-                        <Form.Label>Termék egységára:</Form.Label>
-                        <br />
-                        <CurrencyInput
-                            id="input-example"
-                            name="input-name"
-                            defaultValue={999}
-                            suffix="Ft"
-                            decimalsLimit={2}
-                            onValueChange={(value, name, values) => console.log(value, name, values)}
-                        />
-                    </Form.Group>
-                    <br />
-
-                    <Form.Group className="mb-3" controlId="priority">
-                        <Form.Label>Kedvezményes?</Form.Label>
-                        <Form.Check // prettier-ignore
-                            type="checkbox"
-                            id="priority-chbx"
-                            label="igen"
-                        />
+                    <Form.Group className="mb-3" controlId="kozNev">
+                        <Form.Label>Közönséges név:</Form.Label>
+                        <Form.Control type="text" />
                     </Form.Group>
                     <br />
 
