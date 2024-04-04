@@ -1,36 +1,48 @@
 body {
-    margin: auto;
+  margin: auto;
 }
 
 header {
-    background-color: rgb(178, 238, 218);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    color: white;
-    font-family: cursive;
-    height: 210px;
-    max-height: 20%;
+  background-color: rgb(178, 238, 218);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: white;
+  font-family: cursive;
+  height: 210px;
+  max-height: 20%;
 }
 
 #indexkep {
-    text-align: center;
+  text-align: center;
 }
 
 #indexKep {
-    border-radius: 50%;
-    border: 2px white dashed;
-    max-width: 200px;
-    max-height: 200px;
+  border-radius: 50%;
+  border: 2px white dashed;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .rightSide {
-    text-align: right;
+  text-align: right;
 }
 
-.reklam{    
-       max-width: 200px;        
-        background-repeat: repeat; 
-        background-size: cover; 
-    
-      
+.reklam {
+ 
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+article {
+  background-color: rgba(139, 195, 74, 0.226);
+}
+
+aside {
+    background-color: rgba(139, 195, 74, 0.281);
+}
+footer {
+  background-color: rgba(0, 0, 0, 0.37);
+  color: white; 
+  padding: 10px;
+  text-align: center;
 }

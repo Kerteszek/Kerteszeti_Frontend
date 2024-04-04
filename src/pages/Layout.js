@@ -21,7 +21,7 @@ const Layout = () => {
                 <div><p>harangvirág...</p></div>
             </header>
 
-            <Navbar expand="lg" className="bg-body-tertiary col-md-12">
+            <Navbar expand="lg" className="bg-body-tertiary col-md-12 nav">
                 <Container>
                     <Navbar.Brand href="/"></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
