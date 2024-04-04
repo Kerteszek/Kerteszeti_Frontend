@@ -9,7 +9,7 @@ import { useGet } from "../../model/Axios";
 
 export default function Webshop() {
     // const termekData = Axios({ endpoint: "products" });//Fontos így kell kinéznie!! Régi változat
-    const termekData = useGet(`product_frontend`);
+    const termekData = useGet(`product_w_pictures`);
     const navigate = useNavigate();
     let dataToPass = {};//obj
 
@@ -32,7 +32,7 @@ export default function Webshop() {
 
                 {termekData.map((elem) => (
                     <TermekKartya
-                        src={elem.kep}
+                        src={elem.picture_path}
                         sname={elem.scientific_name}
                         name={elem.name}
                         dbSzam={elem.in_stock}

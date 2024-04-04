@@ -12,10 +12,10 @@ export default function TermekKartya(props) {
         console.log(termek_id);
         props.megnyit(termek_id);
     }
-
+    console.log(props.src);
     return (
         <Card className='col-md-3 cadKep' style={{ width: '18rem' }}>
-            <div className='cardPicture ' ><Card.Img variant="top" src="kepek/termekek/boritokep/{props.src}" /></div>
+            <div className='cardPicture ' ><Card.Img variant="top" src={props.src} /></div>
             <Card.Body>
                 <Card.Title>{props.name}</Card.Title>
                 <Card.Text>
