@@ -1,5 +1,6 @@
 import useAuthContext from "../context/AuthContext";
 import React, { useEffect } from "react";
+import "./Main.css";
 
 export default function Main() {
 
@@ -12,7 +13,8 @@ export default function Main() {
      }); */
 
     return (
-        <div className="main">Ez a főoldal
+        <div className="main">
+            <div id="welcome_banner"><img className="welcome" src="kepek/welcome_felirattal.jpg" alt="Description of the image" /></div>
 
         </div>
     )

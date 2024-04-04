@@ -2,10 +2,6 @@ import Card from 'react-bootstrap/Card';
 import KedvencButton from "../../Buttons/KedvencButton.js"
 import Termekmegnyit from '../../Buttons/TermekMegnyitButton.js';
 
-//{props.src}
-
-//kepek/termekek/virage1.png
-
 export default function TermekKartya(props) {
 
     function megnyit(termek_id) {
