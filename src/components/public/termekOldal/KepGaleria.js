@@ -4,11 +4,11 @@ import '../../../pages/public/TermekOldal.css';
 
 export default function KepGaleria(props) {
     const [aktKep, setAktKep] = useState(0);
-    console.log(props.termekData);
+    //console.log(props.kepData);
 
     useEffect(() => {
-        console.log(props.termekData[aktKep]);
-    }, [aktKep, props.termekData]);
+        //console.log(props.kepData[aktKep]);
+    }, [aktKep, props.kepData]);
 
     function kepvalt(termekKep_eleres) {
         console.log(termekKep_eleres);
@@ -18,11 +18,11 @@ export default function KepGaleria(props) {
     return (
         <div className="kepGaleria row col-md-7" >
             <div className="nagyKep col-md-12 text-center">
-                <Kep adatok={props.termekData[aktKep]} />
+                <Kep adatok={props.kepData[aktKep]} />
             </div>
             <div className="row" >
                 {
-                    props.termekData.map((elem, index) => {
+                    props.kepData.map((elem, index) => {
                         return (
                             <div className="kisKepek col-md-3 " key={index}>
                                 <Kep adatok={elem} kepvalt={() => kepvalt(index)} />

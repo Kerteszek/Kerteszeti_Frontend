@@ -9,8 +9,9 @@ export default function TermekOldal(props) {
     const location = useLocation();
     const { state } = location;
     //console.log(state);
-    const termekData = useGet(`k_product_pictures/${state.termek_id}`);
-    //k_product_pictures/${state.termek_id}
+    const kepData = useGet(`k_product_pictures/${state.termek_id}`);
+    const termekData = useGet(`konkret_product/${state.termek_id}`);
+    console.log(termekData);
 
     if (!termekData) {
         return <div><h1>Kis türelmet.</h1>
@@ -19,14 +20,9 @@ export default function TermekOldal(props) {
     } else {
         return (
             <div className="termekOldal row">
-                <KepGaleria termekData={termekData} />
-                <TermekLeiras termekObj={"adatok"} />
-
-                <div>Termék ID: {state.termek_id} <br></br>
-                </div>
+                <KepGaleria kepData={kepData} />
+                <TermekLeiras termekData={termekData} />
             </div>
         )
     }
 }
-
-//https://medium.com/@hammadrao891/passing-data-via-links-in-react-a-guide-to-effective-data-transfer-1e0b030e2a12
