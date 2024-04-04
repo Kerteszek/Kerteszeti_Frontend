@@ -22,3 +22,6 @@
 /* div {
     border: 1px solid black;
 } */
+.nagyKep {
+    pointer-events: none;
+}

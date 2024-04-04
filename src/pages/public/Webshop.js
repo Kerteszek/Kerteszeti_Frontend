@@ -16,7 +16,7 @@ export default function Webshop() {
     function megnyit(index) {
         dataToPass.termek_id = index;
 
-        navigate('/termekOldal', { state: dataToPass });
+        navigate('/termekOldal', { state: dataToPass});
 
     }
 
@@ -31,10 +31,9 @@ export default function Webshop() {
 
                 {termekData.map((elem) => (
                     <TermekKartya
+                        adatok={termekData}
                         src={elem.picture_path}
-                        sname={elem.scientific_name}
                         name={elem.name}
-                        dbSzam={elem.in_stock}
                         ar={elem.price}
                         tipus={elem.unit}
                         color={elem.color}
@@ -48,3 +47,16 @@ export default function Webshop() {
     }
 }
 
+/** <TermekKartya
+     adatok={termekData}
+     src={elem.picture_path}
+     sname={elem.scientific_name}
+     name={elem.name}
+     dbSzam={elem.in_stock}
+     ar={elem.price}
+     tipus={elem.unit}
+     color={elem.color}
+     key={elem.product_id}
+     termek_id={elem.product_id}
+     megnyit={megnyit}
+                    /> */

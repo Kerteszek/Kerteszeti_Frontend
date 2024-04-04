@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Kep from "./Kep";
+import '../../../pages/public/TermekOldal.css';
 
 export default function KepGaleria(props) {
     const [aktKep, setAktKep] = useState(0);
@@ -32,5 +33,3 @@ export default function KepGaleria(props) {
         </div>
     )
 }
-
-//https://mdbootstrap.com/docs/react/extended/gallery/
