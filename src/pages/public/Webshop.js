@@ -16,7 +16,6 @@ export default function Webshop() {
     function megnyit(index) {
         dataToPass.termek_id = index;
 
-
         navigate('/termekOldal', { state: dataToPass });
 
     }

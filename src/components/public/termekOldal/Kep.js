@@ -2,25 +2,18 @@ import '../../../pages/public/TermekOldal.css';
 
 export default function Kep(props) {
 
-    // console.log(props);
-
     function kepvalt() {
-
         let kep = props.adatok;
-        //let termek_id = props.adatok.termek_id;
-        //let vissza = {termek_id, kep }
-        console.log(kep);
+        console.log("Kep.js kepvalt: ");
+        console.log(kep)
         props.kepvalt(kep);
-        //onClick={kepvalt}
     }
-
     return (
 
         <img className='TermekKep img-fluid'
 
-            src={props.adatok.kep}
-            alt={props.adatok.kep}
+            src={props.adatok.picture_path}
+            alt={props.adatok.picture_path}
             onClick={kepvalt} />
     )
-
 }
