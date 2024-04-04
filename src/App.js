@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Main from "./pages/Main";
 import Public from "./pages/public/Public";
 import Login from "./pages/Login";
@@ -11,6 +12,10 @@ import Webshop from "./pages/public/Webshop";
 import TermekOldal from "./pages/public/TermekOldal";
 import Regisztracion from "./pages/Regisztracio";
 import Adatlap from "./components/public/felhasznalo/AdatLap";
+import Admin from './pages/admin/Admin';
+import FelhasznalokLista from './pages/admin/FelhasznalokLista';
+import NovenyekFelvitel from './pages/admin/NovenyekFelvitel';
+import TermekekLista from './pages/admin/TermekekLista';
 
 
 function App() {
@@ -29,6 +34,10 @@ function App() {
         <Route path="termekOldal" element={<TermekOldal />}
           component={TermekOldal}
         />
+        <Route path="Admin" element={<Admin />} />
+          <Route path="Admin/NovenyekFelvitel" element={<NovenyekFelvitel />} />
+          <Route path="Admin/TermekekLista" element={<TermekekLista />} />
+          <Route path="Admin/FelhasznalokLista" element={<FelhasznalokLista />} />
         <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>
