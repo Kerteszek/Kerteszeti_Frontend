@@ -1,8 +1,12 @@
 import Table from 'react-bootstrap/Table';
-
+import TermekekAdminnak from '../../components/admin/TermekekAdminnak';
 export default function TermekekLista() {
     return (
         <div className="termekeklista">admin termékek módosítása
+            <section>
+                <h1>Idekerül az új lista</h1>
+                < TermekekAdminnak />
+            </section>
             <section>
                 <Table striped bordered hover>
                     <thead>

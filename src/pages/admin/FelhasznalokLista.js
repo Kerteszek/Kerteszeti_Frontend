@@ -1,8 +1,15 @@
 import Table from 'react-bootstrap/Table';
+import FelhasznalokListazasa from '../../components/admin/FelhasznalokListazasa';
+
 
 export default function FelhasznalokLista() {
+    
     return (
-        <div className="felhasznaloklista">admin felhasznalók módosítása
+        <div className="felhasznaloklista">
+            <section>
+                <h1>Idekerül az új lista</h1>
+                < FelhasznalokListazasa />
+            </section>
             <section>
                 <Table striped bordered hover>
                     <thead>

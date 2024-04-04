@@ -26,6 +26,22 @@ export default function Axios({ endpoint }) {
 
         fetchData();
     }, [endpoint]);
+    return data;
+}
 
+export function useGet(endpoint){
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try{
+                const response = await axios.get(baseURL + endpoint);
+                setData(response.data);
+            } catch(error){
+                console.error("HIBA adatlekérés közben:", error);
+            }
+        };
+        fetchData();
+    }, [endpoint]);
     return data;
 }

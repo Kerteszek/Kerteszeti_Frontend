@@ -1,42 +1,42 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import CurrencyInput from 'react-currency-input-field';
-import './TermekFelvitel.css';
+import './adminEgyebek.css';
 
-export default function TermekekFelvitel() {
+export default function NovenyekFelvitel() {
     return (
-        <div className="termekekfelvitel">
+        <div className="novenyekfelvitel">
             <h5>Kérlek töltsd ki a megfelelő adatokkal az alábbi űrlapot!</h5>
             <section>
 
                 <Form>
-                    <Form.Group controlId="latinNev">
+                    <Form.Group className="mb-3" controlId="latinNev">
                         <Form.Label>Latin név:</Form.Label>
                         <Form.Control type="text" />
                     </Form.Group>
                     <br />
 
                     <Form.Group className="mb-3" controlId="statusz">
-                        <Form.Select>
+                        <Form.Select defaultValue="mag">
                             <option>Kérlek válassz állapotot!</option>
-                            <option value="false" selected>Mag</option>
-                            <option value="true">Élő</option>
+                            <option value="false">mag</option>
+                            <option value="true">élő</option>
                         </Form.Select>
                     </Form.Group>
-
+                    <br />
 
                     <Form.Group className="mb-3" controlId="tipus">
-                        <Form.Select>
+                        <Form.Select defaultValue="haszonnövény">
                             <option>Kérlek válassz típust!</option>
-                            <option value="false" selected>Haszonnövény</option>
+                            <option value="false">haszonnövény</option>
                             <option value="true">Dísznövény</option>
                         </Form.Select>
                     </Form.Group>
                     <br />
 
                     <Form.Group className="mb-3" controlId="szin">
-                        <Form.Select>
-                            <option value="null" selected>Kérlek válassz színt vagy hagyd üresen!</option>
+                        <Form.Select defaultValue="Kérlek válassz színt vagy hagyd üresen!">
+                            <option value="null">Kérlek válassz színt vagy hagyd üresen!</option>
                             <option value="vörös">vörös</option>
                             <option value="piros">piros</option>
                             <option value="rózsaszín">rózsaszín</option>
@@ -52,8 +52,8 @@ export default function TermekekFelvitel() {
                     <br />
 
                     <Form.Group className="mb-3" controlId="kiszereles">
-                        <Form.Select>
-                            <option selected>Kérlek válassz kiszerelést!</option>
+                        <Form.Select defaultValue="Kérlek válassz kiszerelést!">
+                            <option>Kérlek válassz kiszerelést!</option>
                             <option value="5cm cserép">5cm cserép</option>
                             <option value="12cm cserép">piros</option>
                             <option value="5l cserép">rózsaszín</option>

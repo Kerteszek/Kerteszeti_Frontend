@@ -11,7 +11,7 @@ import Webshop from './pages/public/Webshop';
 import TermekOldal from './components/public/webshop/TermekOldal';
 import Admin from './pages/admin/Admin';
 import FelhasznalokLista from './pages/admin/FelhasznalokLista';
-import TermekekFelvitel from './pages/admin/TermekekFelvitel';
+import NovenyekFelvitel from './pages/admin/NovenyekFelvitel';
 import TermekekLista from './pages/admin/TermekekLista';
 
 
@@ -28,7 +28,7 @@ function App() {
           <Route path="Webshop" element={<Webshop />} />
           <Route path="Login" element={<Login />} />
           <Route path="Admin" element={<Admin />} />
-          <Route path="Admin/TermekekFelvitel" element={<TermekekFelvitel />} />
+          <Route path="Admin/NovenyekFelvitel" element={<NovenyekFelvitel />} />
           <Route path="Admin/TermekekLista" element={<TermekekLista />} />
           <Route path="Admin/FelhasznalokLista" element={<FelhasznalokLista />} />
           <Route path="termekOldal" element={<TermekOldal />} component={TermekOldal} />

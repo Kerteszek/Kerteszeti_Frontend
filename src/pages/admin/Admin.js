@@ -2,7 +2,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './Admin.css';
 
-
 export default function Admin() {
     return (
         <div className="admin">
@@ -15,23 +14,19 @@ export default function Admin() {
                         </Card.Text>
                         <Button variant="primary" id='termod'>
                             <a href='admin/termekeklista'>Termékek módosítása</a>
-                            
                         </Button>
-                        //table
                     </Card.Body>
                 </Card>
 
                 <Card>
                     <Card.Body>
-                        <Card.Title>Beszerzés</Card.Title>
+                        <Card.Title>Növények</Card.Title>
                         <Card.Text>
-                            Új termékek érkeztek! Itt felviheted.
+                            Új áru érkezett! Itt felviheted.
                         </Card.Text>
-                        <Button variant="primary" id='termfel'>
-                            <a href='admin/termekekfelvitel'>Termékek felivtele</a>
-                            
+                        <Button variant="primary" id='novfel'>
+                            <a href='admin/novenyekfelvitel'>Növenyek felivtele</a>
                         </Button>
-                        Ürlappal egyes termékeknél, csoportosnál: excel-ből
                     </Card.Body>
                 </Card>
 
