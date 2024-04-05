@@ -12,6 +12,7 @@ import { Button } from "react-bootstrap";
 const Layout = () => {
 
     const { user, logout } = useAuthContext();
+    console.log(user)
     return (
         <div className="row">
             <header className="col-md-12">
