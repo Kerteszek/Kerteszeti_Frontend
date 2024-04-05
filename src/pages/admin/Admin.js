@@ -2,8 +2,14 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './Admin.css';
 
+//import useAuthContext from "../context/AuthContext";
+
 export default function Admin() {
+
+    //const { user, logout } = useAuthContext();
+
     return (
+        //{user}
         <div className="admin">
             <section>
                 <Card className='adminKartya'>
