@@ -1,10 +1,21 @@
-import {useGet} from "../../model/Axios";
 import Table from 'react-bootstrap/Table';
+//import { useEffect, useState } from 'react';
 
-export default function FelhasznalokListazasa() {
-    const termekek = useGet(`products`);
+export default function FelhasznalokListazasa(props) {
+/*
+    const [propsek, setpropsek] = useState([])
+    const [loading, setLoading] = useState(false)
 
-
+    useEffect(() => {
+        setLoading(true)
+        fetch("http://127.0.0.1:8000/api/products")
+        .then(response => response.json())
+        .then(json => setpropsek(json))
+        .finally(() => {
+            setLoading(false)
+        })
+    }, [])
+*/
     return (
         <>
             <h1>Termékek listája</h1>
@@ -25,21 +36,20 @@ export default function FelhasznalokListazasa() {
                     </tr>
                 </thead>
                 <tbody>
-                    {termekek && termekek.map(termek => {
-                        <tr key={termek.product_id}>
-                            <td>{termek.scientific_name}</td>
-                            <td>{termek.status}</td>
-                            <td>{termek.type}</td>
-                            <td>{termek.color}</td>
-                            <td>{termek.unit}</td>
-                            <td>{termek.price}</td>
-                            <td>{termek.in_stock}</td>
-                            <td>{termek.reserved}</td>
-                            <td>{termek.priority}</td>
+                    
+                        <tr key={props.product_id}>
+                            <td>{props.scientific_name}</td>
+                            <td>{props.status}</td>
+                            <td>{props.type}</td>
+                            <td>{props.color}</td>
+                            <td>{props.unit}</td>
+                            <td>{props.price}</td>
+                            <td>{props.in_stock}</td>
+                            <td>{props.reserved}</td>
+                            <td>{props.priority}</td>
                             <td><button>szerkesztés</button></td>
                             <td><button>törlés</button></td>
                         </tr>
-                    })}
                 </tbody>
             </Table>
         </>

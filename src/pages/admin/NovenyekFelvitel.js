@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import CurrencyInput from 'react-currency-input-field';
+//import CurrencyInput from 'react-currency-input-field';
 import './adminEgyebek.css';
 
 export default function NovenyekFelvitel() {
@@ -9,7 +9,7 @@ export default function NovenyekFelvitel() {
             <h5>Kérlek töltsd ki a megfelelő adatokkal az alábbi űrlapot!</h5>
             <section>
 
-                <Form>
+                <Form className='novurlap'> 
                     <Form.Group className="mb-3" controlId="latinNev">
                         <Form.Label>Tudományos név:</Form.Label>
                         <Form.Control type="text" />

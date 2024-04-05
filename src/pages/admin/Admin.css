@@ -4,7 +4,7 @@ section {
 
 }
 
-div {
+.adminKartya {
     display: inline-block;
     text-align: center;
 }

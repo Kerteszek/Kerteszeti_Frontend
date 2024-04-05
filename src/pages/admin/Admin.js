@@ -6,7 +6,7 @@ export default function Admin() {
     return (
         <div className="admin">
             <section>
-                <Card>
+                <Card className='adminKartya'>
                     <Card.Body>
                         <Card.Title>Módosítás</Card.Title>
                         <Card.Text>
@@ -18,7 +18,7 @@ export default function Admin() {
                     </Card.Body>
                 </Card>
 
-                <Card>
+                <Card className='adminKartya'>
                     <Card.Body>
                         <Card.Title>Növények</Card.Title>
                         <Card.Text>
@@ -30,7 +30,7 @@ export default function Admin() {
                     </Card.Body>
                 </Card>
 
-                <Card>
+                <Card className='adminKartya'>
                     <Card.Body>
                         <Card.Title>Felhasználók</Card.Title>
                         <Card.Text>
