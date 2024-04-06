@@ -43,6 +43,13 @@ const Layout = () => {
                                 <NavDropdown.Item href="/">Akciók</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link href="/AboutUs">Rólunk</Nav.Link>
+                            {user && (user.permission === 0 || user.permission === 1) ? (
+                                <>
+                                    <Nav.Link href="/Admin">Admin</Nav.Link>
+                                </>
+                            ) : (
+                                <></>
+                            )}
                         </Nav>
                         <Nav>
                             {user ? (
@@ -53,7 +60,7 @@ const Layout = () => {
                                         <NavDropdown.Item href="/adatlap">
                                             Adataim
                                         </NavDropdown.Item>
-                                        <NavDropdown.Item href="/adatlap">Rendeléseim</NavDropdown.Item>
+                                        <NavDropdown.Item href="/adatlap">Rendeléseim {user?.permission}</NavDropdown.Item>
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item className="text-danger" onClick={logout}>
                                             Kijelentkezés
