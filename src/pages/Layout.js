@@ -38,6 +38,13 @@ const Layout = () => {
                                 <NavDropdown.Item href="/">Akciók</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link href="/AboutUs">Rólunk</Nav.Link>
+                            {user && (user.permission === 0 || user.permission === 1) ? (
+                                <>
+                                    <Nav.Link href="/Admin">Admin</Nav.Link>
+                                </>
+                            ) : (
+                                <></>
+                            )}
                         </Nav>
                         <Nav>
                             {user ? (
@@ -48,7 +55,7 @@ const Layout = () => {
                                         <NavDropdown.Item href="/adatlap">
                                             Adataim
                                         </NavDropdown.Item>
-                                        <NavDropdown.Item href="/adatlap">Rendeléseim</NavDropdown.Item>
+                                        <NavDropdown.Item href="/adatlap">Rendeléseim {user?.permission}</NavDropdown.Item>
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item className="text-danger" onClick={logout}>
                                             Kijelentkezés
@@ -77,7 +84,7 @@ const Layout = () => {
                 <Outlet />
             </article>
             <aside id="asJobb" className="col-md-2 col-sm-1">
-                <Card.Img variant="top" className="reklam" src="kepek/banner.jpg" />                
+                <Card.Img variant="top" className="reklam" src="kepek/banner.jpg" />
             </aside>
             <footer className="col-md-12">Készítette: Dreilinger Vanessza Maja és Családi Alexandra</footer>
 
