@@ -9,6 +9,10 @@ import './Layout.css';
 import useAuthContext from "../context/AuthContext";
 import { Button } from "react-bootstrap";
 
+import Row from 'react-bootstrap/Row';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+
 const Layout = () => {
 
     const { user, logout } = useAuthContext();
@@ -71,6 +75,20 @@ const Layout = () => {
 
             <aside id="asBal" className="col-md-2 col-sm-1">
                 Részletes keresés
+                <Form inline="true">
+                    <Row>
+                        <Col xs="auto">
+                            <Form.Control
+                                type="text"
+                                placeholder="Search"
+                                className=" mr-sm-2"
+                            />
+                        </Col>
+                        <Col xs="auto">
+                            <Button type="submit">Submit</Button>
+                        </Col>
+                    </Row>
+                </Form>
 
             </aside>
             <article className="col-md-8 col-sm-10">
@@ -78,7 +96,7 @@ const Layout = () => {
                 <Outlet />
             </article>
             <aside id="asJobb" className="col-md-2 col-sm-1">
-                <Card.Img variant="top" className="reklam" src="kepek/banner.jpg" />                
+                <Card.Img variant="top" className="reklam" src="kepek/banner.jpg" />
             </aside>
             <footer className="col-md-12">Készítette: Dreilinger Vanessza Maja és Családi Alexandra</footer>
 
