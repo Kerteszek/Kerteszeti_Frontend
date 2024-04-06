@@ -35,9 +35,9 @@ function App() {
           component={TermekOldal}
         />
         <Route path="Admin" element={<Admin />} />
-          <Route path="Admin/NovenyekFelvitel" element={<NovenyekFelvitel />} />
-          <Route path="Admin/TermekekLista" element={<TermekekLista />} />
-          <Route path="Admin/FelhasznalokLista" element={<FelhasznalokLista />} />
+          <Route path="NovenyekFelvitel" element={<NovenyekFelvitel />} />
+          <Route path="TermekekLista" element={<TermekekLista />} />
+          <Route path="FelhasznalokLista" element={<FelhasznalokLista />} />
         <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>
