@@ -16,6 +16,7 @@ import Admin from './pages/admin/Admin';
 import FelhasznalokLista from './pages/admin/FelhasznalokLista';
 import NovenyekFelvitel from './pages/admin/NovenyekFelvitel';
 import TermekekLista from './pages/admin/TermekekLista';
+import Kosar from "./components/public/Kosar";
 
 
 function App() {
@@ -31,13 +32,15 @@ function App() {
         <Route path="Login" element={<Login />} />
         <Route path="regisztracio" element={<Regisztracion />} />
         <Route path="adatlap" element={<Adatlap />} />
+
+        <Route path="Kosar" element={<Kosar />} />
         <Route path="termekOldal" element={<TermekOldal />}
           component={TermekOldal}
         />
         <Route path="Admin" element={<Admin />} />
-          <Route path="Admin/NovenyekFelvitel" element={<NovenyekFelvitel />} />
-          <Route path="Admin/TermekekLista" element={<TermekekLista />} />
-          <Route path="Admin/FelhasznalokLista" element={<FelhasznalokLista />} />
+        <Route path="Admin/NovenyekFelvitel" element={<NovenyekFelvitel />} />
+        <Route path="Admin/TermekekLista" element={<TermekekLista />} />
+        <Route path="Admin/FelhasznalokLista" element={<FelhasznalokLista />} />
         <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>

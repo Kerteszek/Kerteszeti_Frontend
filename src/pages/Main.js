@@ -4,13 +4,13 @@ import "./Main.css";
 
 export default function Main() {
 
-    /*  const { user, getUser } = useAuthContext();
+     const { user, getUser } = useAuthContext();
      useEffect(() => {
          console.log(user)
          if (!user) {
              getUser();
          }
-     }); */
+     });
 
     return (
         <div className="main">

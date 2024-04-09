@@ -16,7 +16,7 @@ import Col from 'react-bootstrap/Col';
 const Layout = () => {
 
     const { user, logout } = useAuthContext();
-    console.log(user)
+    //console.log(user)
     return (
         <div className="row">
             <header className="col-md-12">
@@ -74,7 +74,7 @@ const Layout = () => {
                                 </Container>
 
                             )}
-                            <Nav.Link href="/adatlap">   Kosár</Nav.Link>
+                            <Nav.Link href="/Kosar">   Kosár</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
