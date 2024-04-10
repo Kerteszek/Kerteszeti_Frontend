@@ -1,1 +1,3 @@
-export default function Rendelesek() { }
+export default function Rendelesek() {
+    
+ }
