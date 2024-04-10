@@ -4,13 +4,13 @@ import "./Main.css";
 
 export default function Main() {
 
-     const { user, getUser } = useAuthContext();
-     useEffect(() => {
-         console.log(user)
-         if (!user) {
-             getUser();
-         }
-     });
+    const { user, getUser } = useAuthContext();
+    useEffect(() => {
+        console.log(user)
+        if (!user) {
+            getUser();
+        }
+    });
 
     return (
         <div className="main">
@@ -19,5 +19,3 @@ export default function Main() {
         </div>
     )
 }
-//<h1>Bejelentkezett felhasználó: {user?.name}</h1>
-//<p>felhasználó: {user ?.name}</p>

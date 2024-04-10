@@ -8,7 +8,6 @@ import indexKep from '../kepek/indexKep.png';
 import './Layout.css';
 import useAuthContext from "../context/AuthContext";
 import { Button } from "react-bootstrap";
-
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
@@ -16,7 +15,7 @@ import Col from 'react-bootstrap/Col';
 const Layout = () => {
 
     const { user, logout } = useAuthContext();
-    //console.log(user)
+    console.log(user)
     return (
         <div className="row">
             <header className="col-md-12">
@@ -60,19 +59,17 @@ const Layout = () => {
                                         <NavDropdown.Item href="/adatlap">
                                             Adataim
                                         </NavDropdown.Item>
-                                        <NavDropdown.Item href="/adatlap">Rendeléseim {user?.permission}</NavDropdown.Item>
+                                        <NavDropdown.Item href="/rendelesek">Rendeléseim {user?.permission}</NavDropdown.Item>
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item className="text-danger" onClick={logout}>
                                             Kijelentkezés
                                         </NavDropdown.Item>
                                     </NavDropdown>
-
                                 </>
                             ) : (
                                 <Container className="rightSide">
                                     <Nav.Link href="/login">Bejelentkezés</Nav.Link>
                                 </Container>
-
                             )}
                             <Nav.Link href="/Kosar">   Kosár</Nav.Link>
                         </Nav>
@@ -106,11 +103,9 @@ const Layout = () => {
                 <Card.Img variant="top" className="reklam" src="kepek/banner.jpg" />
             </aside>
             <footer className="col-md-12">Készítette: Dreilinger Vanessza Maja és Családi Alexandra</footer>
-
         </div>
     );
 };
-
 export default Layout;
 
 

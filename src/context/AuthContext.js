@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
     const getUser = async () => {
         try {
             const { data } = await axios.get("/api/user");
-            setUser(data);
+            setUser(data);           
         } catch (e) {
             console.log("Error a felhasználó adatainak lekérésekor: " + e);
         }
