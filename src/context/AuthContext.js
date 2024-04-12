@@ -14,14 +14,8 @@ export const AuthProvider = ({ children }) => {
         password_confirmation: "",
     });
 
-    useEffect(() => {
-        const storedUser = localStorage.getItem('user');
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
-        }
-    }, []);
-
     let token = "";
+
     const csrf = () =>
         axios.get("/token").then((response) => {
             console.log(response);
@@ -29,39 +23,50 @@ export const AuthProvider = ({ children }) => {
         });
 
     const getUser = async () => {
-        const { data } = await axios.get("/api/user");
-        setUser(data);
+        try {
+            const { data } = await axios.get("/api/user");
+            setUser(data);           
+        } catch (e) {
+            console.log("Error a felhasználó adatainak lekérésekor: " + e);
+        }
     };
 
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
+
     const logout = async () => {
-        await csrf();
-        console.log(token);
-        axios.post("/logout", { _token: token }).then((resp) => {
-            setUser(null);
-            console.log(resp);
-            // Clear user from local storage on logout
-            localStorage.removeItem('user');
-            // Redirect to home page or wherever appropriate
-            navigate("/");
-        });
+        //await csrf();
+        // console.log(token);
+        try {
+            axios.post("/logout", { _token: token }).then((resp) => {
+                setUser(null);
+                console.log(resp);
+                localStorage.removeItem('user');
+                navigate("/");
+            });
+        } catch (e) {
+            console.error("Hiba kijelentkezés közben!")
+
+        }
+
     };
 
     const loginRegister = async ({ ...adat }, vegpont) => {
         await csrf()
-        console.log(token)
+        //console.log(token)
         adat._token = token;
-        console.log(adat)
-
-        await csrf();
-
+        //console.log(adat)
+        /// await csrf();
         try {
             await axios.post(vegpont, adat);
             console.log("Sikeres belépés/ regisztráció!");
-
-            await getUser();
-
+            getUser();
             localStorage.setItem('user', JSON.stringify(adat));
-            
+
             navigate("/");
         } catch (error) {
             console.log(error);

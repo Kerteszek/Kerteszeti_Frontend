@@ -11,12 +11,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Webshop from "./pages/public/Webshop";
 import TermekOldal from "./pages/public/TermekOldal";
 import Regisztracion from "./pages/Regisztracio";
-import Adatlap from "./components/public/felhasznalo/AdatLap";
+import Adatlap from "./pages/AdatLap";
 import Admin from './pages/admin/Admin';
 import FelhasznalokLista from './pages/admin/FelhasznalokLista';
 import NovenyekFelvitel from './pages/admin/NovenyekFelvitel';
 import TermekekLista from './pages/admin/TermekekLista';
-
+import Kosar from "./components/public/Kosar";
+import Rendelesek from "./pages/public/Rendelesek";
 
 function App() {
   return (
@@ -31,13 +32,16 @@ function App() {
         <Route path="Login" element={<Login />} />
         <Route path="regisztracio" element={<Regisztracion />} />
         <Route path="adatlap" element={<Adatlap />} />
+        <Route path="rendelesek" element={<Rendelesek />} />
+
+        <Route path="Kosar" element={<Kosar />} />
         <Route path="termekOldal" element={<TermekOldal />}
           component={TermekOldal}
         />
         <Route path="Admin" element={<Admin />} />
-          <Route path="NovenyekFelvitel" element={<NovenyekFelvitel />} />
-          <Route path="TermekekLista" element={<TermekekLista />} />
-          <Route path="FelhasznalokLista" element={<FelhasznalokLista />} />
+        <Route path="Admin/NovenyekFelvitel" element={<NovenyekFelvitel />} />
+        <Route path="Admin/TermekekLista" element={<TermekekLista />} />
+        <Route path="Admin/FelhasznalokLista" element={<FelhasznalokLista />} />
         <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>

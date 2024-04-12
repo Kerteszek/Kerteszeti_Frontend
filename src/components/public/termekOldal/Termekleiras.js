@@ -1,26 +1,25 @@
-import KedvencButton from "../../Buttons/KedvencButton";
+import KosarButton from "../../Buttons/KosarButton";
+import MennyisegValaszto from "../../Buttons/MennyisegValaszto";
 
 export default function TermekLeiras(props) {
-
     function kattintasKezeles() {
-        //console.log(props.index);
         props.kattintasKezeles(props.index);
     }
+
     console.log(props.termekData);
 
     return (
-        <div className="termekLeiras col-md-5" >
-            <div className="row">
-                <div className="col-md-11"><h3 >{props.termekData[0].name}</h3></div>
-                <div className="col-md-1" > <KedvencButton /></div>
-            </div>
-            <h5>{props.termekData[0].scientific_name}</h5>
-            <h5>{props.termekData[0].unit}</h5>
-            <h5>Rövid leírás a növényről</h5>
+        <div className="termekLeiras col-md-5">
+            <h5>Kapható kiszerelés: {props.termekData[0].unit}</h5>
+            <br />
+            <h4>Leírás</h4>
             <p>{props.termekData[0].description}</p>
+            <br />
+            <div className="row">
+                <h5 >Elérhető készlet: {props.termekData[0].in_stock} db</h5>
+                <div> < MennyisegValaszto /></div>
 
-
+            </div>
         </div>
-    )
-
+    );
 }
