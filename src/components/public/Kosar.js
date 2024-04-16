@@ -1,37 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { useGet, useDelete } from "../../model/Axios";
+import React, { useContext, useEffect, useState } from 'react';
+import { KosarbaContext } from '../../context/KosarbaContext';
 
-export default function Kosar(props) {
-    const basketItems = useGet('basket_items');
-    const deleteBasketItem = useDelete('');
+export default function Kosar() {
+    const { torolKosar, torolElem } = useContext(KosarbaContext);
+    const [cartItems, setCartItems] = useState([]);
 
-    const handleDeleteItem = async (basketId, productId) => {
-        try {
-            await deleteBasketItem(`basket_items_delete/${productId}/${basketId}`);
-        } catch (error) {
-            console.error('Error deleting basket item:', error);
+    useEffect(() => {
+        const storedItems = JSON.parse(localStorage.getItem('kosar'));
+        if (storedItems) {
+            setCartItems(storedItems);
         }
+    }, []);
+
+    const handleDeleteAll = () => {
+        torolKosar();
+        localStorage.removeItem('kosar');
+        setCartItems([]);
+    };
+
+    const handleDeleteItem = (index) => {
+        const updatedCartItems = [...cartItems];
+        updatedCartItems.splice(index, 1);
+        setCartItems(updatedCartItems);
+        localStorage.setItem('kosar', JSON.stringify(updatedCartItems));
     };
 
     return (
         <div className="kosar">
-            <h2>Your Basket</h2>
+            <h2>Kiválasztott termékek</h2>
+            <button onClick={handleDeleteAll}>Delete All</button>
             <ul>
-                {basketItems && basketItems.map((item, index) => (
+                {cartItems.map((termek, index) => (
                     <li key={index}>
-                        {item.product.name} - {item.amount}
-                        <button onClick={() => handleDeleteItem(item.basket, item.product.id)}>&times;</button>
+                        {termek.termek_neve} - Quantity: {termek.mennyiseg} - Price: {termek.termek_ara * termek.mennyiseg}
+                        <button onClick={() => handleDeleteItem(index)}>Delete</button>
                     </li>
                 ))}
             </ul>
-            <div>
-                Total: {calculateTotal(basketItems)}
-            </div>
         </div>
     );
-}
-
-function calculateTotal(items) {
-    if (!items) return 0;
-    return items.reduce((total, item) => total + (item.product.price * item.amount), 0);
 }

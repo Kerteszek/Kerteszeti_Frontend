@@ -1,31 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
-    
-export default function MennyisegValaszto({ onAddToCart }) {
-    const [quantity, setQuantity] = useState(1); // Initialize quantity with 1
+import KosarButton from './KosarButton';
+import { KosarbaContext } from '../../context/KosarbaContext';
+
+
+export default function MennyisegValaszto(props) {
+    const [mennyiseg, setMennyiseg] = useState(1);
+    const { kivalaszt } = useContext(KosarbaContext);
 
     const handleQuantityChange = (event) => {
-        // Update the quantity based on user input
-        const newQuantity = parseInt(event.target.value);
-        setQuantity(newQuantity);
+        let ujMennyiseg = parseInt(event.target.value);
+        if (ujMennyiseg < 1) {
+            ujMennyiseg = 1;
+        }
+        setMennyiseg(ujMennyiseg);
     };
 
-    const kosarba = () => {
-        // Pass the selected quantity to the parent component
-        onAddToCart(quantity);
+    const decreaseQuantity = () => {
+        if (mennyiseg > 1) {
+            setMennyiseg(mennyiseg - 1);
+        }
     };
+
+    const increaseQuantity = () => {
+        setMennyiseg(mennyiseg + 1);
+    };
+
+    const addToCart = () => {
+        const termek = {
+            termek_id: props.dataToPass.termek_id,
+            termek_neve: props.dataToPass.termek_neve,
+            termek_ara: props.dataToPass.termek_ara,
+            mennyiseg: mennyiseg,
+        };
+        console.log("MennyisegValaszto")
+        console.log(termek);
+               
+        const user = JSON.parse(localStorage.getItem('user'));
+        const kosar = JSON.parse(localStorage.getItem('kosar')) || [];
+        kosar.push(termek);
+        localStorage.setItem('kosar', JSON.stringify(kosar));
+               
+        kivalaszt(termek);
+    };
+    
 
     return (
         <div>
+            <Button variant="secondary" onClick={decreaseQuantity}>-</Button>
             <input
                 type="number"
-                value={quantity}
+                value={mennyiseg}
                 onChange={handleQuantityChange}
                 min="1"
             />
-            <Button className='float-right megnezGomb' variant="primary" onClick={kosarba}>
-                Kosárba
-            </Button>
+            <Button variant="secondary" onClick={increaseQuantity}>+</Button>
+            <KosarButton onAddToCart={addToCart} />
         </div>
     );
 }

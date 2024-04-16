@@ -15,7 +15,7 @@ import Col from 'react-bootstrap/Col';
 const Layout = () => {
 
     const { user, logout } = useAuthContext();
-    console.log(user)
+    //console.log(user)
     return (
         <div className="row">
             <header className="col-md-12">
@@ -59,7 +59,7 @@ const Layout = () => {
                                         <NavDropdown.Item href="/adatlap">
                                             Adataim
                                         </NavDropdown.Item>
-                                        <NavDropdown.Item href="/rendelesek">Rendeléseim {user?.permission}</NavDropdown.Item>
+                                        <NavDropdown.Item href="/rendelesek">Rendeléseim {user?.permission}</NavDropdown.Item>                                        
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item className="text-danger" onClick={logout}>
                                             Kijelentkezés

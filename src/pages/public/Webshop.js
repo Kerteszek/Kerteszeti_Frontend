@@ -1,7 +1,6 @@
 //import { TERMEKLISTA } from "../../adatok/adatok";
 import React from 'react';
 import TermekKartya from '../../components/public/webshop/TermekKartya.js';
-import Axios from '../../model/Axios.js';
 import './Webshop.css';
 import { useNavigate } from 'react-router';
 import { useGet } from "../../model/Axios";

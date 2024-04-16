@@ -6,22 +6,23 @@ import useAuthContext from "../context/AuthContext";
 function Adatlap() {
     const { user, getUser } = useAuthContext();
     useEffect(() => {
-        console.log(user)
+        //console.log(user)
         if (!user) {
             getUser();
         }
     });
 
-    // console.log(user?.name)
-    let mintacim = 'Minta utca 45';
+    //console.log(user?.name)
+    let mintacim = '';
+    let userName = '';
 
     const [deliveryInfo, setDeliveryInfo] = useState({
-        name: user?.name,
+        name: userName,
         address: mintacim
     });
 
     const [billingInfo, setBillingInfo] = useState({
-        name: user?.name,
+        name: userName,
         address: mintacim
     });
 
@@ -83,11 +84,11 @@ function Adatlap() {
             <form>
                 <div className="mb-3">
                     <label className="form-label">Név:</label>
-                    <input type="text" className="form-control" name="name" value={deliveryInfo.name} onChange={handleDeliveryChange} />
+                    <input type="text" className="form-control" name="name" value={deliveryInfo.name} onChange={handleDeliveryChange} placeholder={user?.name} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Cím:</label>
-                    <input type="text" className="form-control" name="address" value={deliveryInfo.address} onChange={handleDeliveryChange} />
+                    <input type="text" className="form-control" name="address" value={deliveryInfo.address} onChange={handleDeliveryChange} placeholder={'Minta utca 45'} />
                 </div>
             </form>
 
@@ -95,12 +96,12 @@ function Adatlap() {
             <form>
                 <div className="mb-3">
                     <label className="form-label">Név:</label>
-                    <input type="text" className="form-control" name="name" value={billingInfo.name} onChange={handleBillingChange} />
+                    <input type="text" className="form-control" name="name" value={billingInfo.name} onChange={handleBillingChange} placeholder={user?.name} />
                 </div>
 
                 <div className="mb-3">
                     <label className="form-label">Cím:</label>
-                    <input type="text" className="form-control" name="address" value={billingInfo.address} onChange={handleBillingChange} />
+                    <input type="text" className="form-control" name="address" value={billingInfo.address} onChange={handleBillingChange} placeholder={'Minta utca 45'} />
                 </div>
             </form>
 

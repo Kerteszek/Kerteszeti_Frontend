@@ -1,6 +1,6 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
+import React, { useEffect } from 'react';
 import Main from "./pages/Main";
 import Public from "./pages/public/Public";
 import Login from "./pages/Login";
@@ -18,8 +18,20 @@ import NovenyekFelvitel from './pages/admin/NovenyekFelvitel';
 import TermekekLista from './pages/admin/TermekekLista';
 import Kosar from "./components/public/Kosar";
 import Rendelesek from "./pages/public/Rendelesek";
+import useAuthContext from "./context/AuthContext";
+import { KosarbaProvider } from "./context/KosarbaContext";
 
 function App() {
+
+  const { user, getUser } = useAuthContext();
+  useEffect(() => {
+    //console.log(user)
+    if (!user) {
+      getUser();
+    }
+  });
+
+
   return (
     //<BrowserRouter>
     <Routes>
@@ -34,15 +46,21 @@ function App() {
         <Route path="adatlap" element={<Adatlap />} />
         <Route path="rendelesek" element={<Rendelesek />} />
 
-        <Route path="Kosar" element={<Kosar />} />
+        <Route path="Kosar" element={<KosarbaProvider><Kosar /></KosarbaProvider>} />
+
         <Route path="termekOldal" element={<TermekOldal />}
           component={TermekOldal}
         />
-        <Route path="Admin" element={<Admin />} />
-        <Route path="Admin/NovenyekFelvitel" element={<NovenyekFelvitel />} />
-        <Route path="Admin/TermekekLista" element={<TermekekLista />} />
-        <Route path="Admin/FelhasznalokLista" element={<FelhasznalokLista />} />
         <Route path="*" element={<NoPage />} />
+
+        {user && user.permission <= 1 && (
+          <>
+            <Route path="Admin" element={<Admin />} />
+            <Route path="Admin/NovenyekFelvitel" element={<NovenyekFelvitel />} />
+            <Route path="Admin/TermekekLista" element={<TermekekLista />} />
+            <Route path="Admin/FelhasznalokLista" element={<FelhasznalokLista />} />
+          </>
+        )}
       </Route>
     </Routes>
     // </BrowserRouter>
