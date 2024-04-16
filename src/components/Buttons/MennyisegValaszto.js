@@ -33,17 +33,24 @@ export default function MennyisegValaszto(props) {
             termek_ara: props.dataToPass.termek_ara,
             mennyiseg: mennyiseg,
         };
+
         console.log("MennyisegValaszto")
         console.log(termek);
-               
-        const user = JSON.parse(localStorage.getItem('user'));
+
         const kosar = JSON.parse(localStorage.getItem('kosar')) || [];
-        kosar.push(termek);
+        const existingProductIndex = kosar.findIndex(item => item.termek_id === termek.termek_id);
+
+        if (existingProductIndex !== -1) {
+            kosar[existingProductIndex].mennyiseg += mennyiseg;
+        } else {
+            kosar.push(termek);
+        }
+
         localStorage.setItem('kosar', JSON.stringify(kosar));
-               
         kivalaszt(termek);
     };
-    
+
+
 
     return (
         <div>
