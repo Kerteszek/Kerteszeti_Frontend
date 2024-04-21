@@ -18,6 +18,7 @@ a{
     text-decoration: none;
 }
 
-aside{
-    display: none;
+.admin{
+    margin: auto;
 }
+

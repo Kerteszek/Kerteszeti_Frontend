@@ -11,8 +11,8 @@ export default function Admin() {
     
     return (
         //{user}
-        <div className="admin">
-            <section>
+        <div>
+            <section className="admin">
                 <Card className='adminKartya'>
                     <Card.Body>
                         <Card.Title>Módosítás</Card.Title>
@@ -45,6 +45,42 @@ export default function Admin() {
                         </Card.Text>
                         <Button variant="primary" id='fhmod'>
                             <a href='/felhasznaloklista'>Felhasználók módosítása</a>
+                        </Button>
+                    </Card.Body>
+                </Card>
+
+                <Card className='adminKartya'>
+                    <Card.Body>
+                        <Card.Title>Termékek összeálltása</Card.Title>
+                        <Card.Text>
+                            Itt módosíthatod a termékeket: add meg a készlet számát, módosítsd a kiszerelést vagy törölj!
+                        </Card.Text>
+                        <Button variant="primary" id='fhmod'>
+                            <a href='/termekekosszeallit'>Termékek összeálltása</a>
+                        </Button>
+                    </Card.Body>
+                </Card>
+
+                <Card className='adminKartya'>
+                    <Card.Body>
+                        <Card.Title>Termékek összeálltása</Card.Title>
+                        <Card.Text>
+                            Itt módosíthatod a termékeket: add meg a készlet számát, módosítsd a kiszerelést vagy törölj!
+                        </Card.Text>
+                        <Button variant="primary" id='fhmod'>
+                            <a href='/kiszerelesek'>Kiszerelések frisstése</a>
+                        </Button>
+                    </Card.Body>
+                </Card>
+
+                <Card className='adminKartya'>
+                    <Card.Body>
+                        <Card.Title>Termékek eladása</Card.Title>
+                        <Card.Text>
+                            Egyedi eladások...
+                        </Card.Text>
+                        <Button variant="primary" id='fhmod'>
+                            <a href='/admineladas'>Különleges eladás</a>
                         </Button>
                     </Card.Body>
                 </Card>

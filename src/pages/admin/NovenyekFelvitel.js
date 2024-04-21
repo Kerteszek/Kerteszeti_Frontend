@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 //import CurrencyInput from 'react-currency-input-field';
-import './adminEgyebek.css';
+//import './adminEgyebek.css';
 
 export default function NovenyekFelvitel() {
     return (
