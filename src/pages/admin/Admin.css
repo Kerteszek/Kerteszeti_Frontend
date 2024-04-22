@@ -9,11 +9,11 @@ section {
     text-align: center;
 }
 
-p {
+.adminKartya p {
     text-align: left;
 }
 
-a{
+.adminKartya a{
     color: antiquewhite;
     text-decoration: none;
 }

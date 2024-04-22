@@ -77,7 +77,7 @@ const Layout = () => {
                 </Container>
             </Navbar>
 
-            <aside id="asBal" className="col-md-2 col-sm-1">
+            {/* <aside id="asBal" className="col-md-2 col-sm-1">
                 Részletes keresés
                 <Form inline="true">
                     <Row>
@@ -94,14 +94,14 @@ const Layout = () => {
                     </Row>
                 </Form>
 
-            </aside>
-            <article className="col-md-8 col-sm-10">
+                        </aside> */}
+            <article className="col-md-12 col-sm-12">
                 {/* Ide kerül majd az útvonalak/linkek által meghatározott tartalom */}
                 <Outlet />
             </article>
-            <aside id="asJobb" className="col-md-2 col-sm-1">
+           {/*  <aside id="asJobb" className="col-md-2 col-sm-1">
                 <Card.Img variant="top" className="reklam" src="kepek/banner.jpg" />
-            </aside>
+                        </aside> */}
             <footer className="col-md-12">Készítette: Dreilinger Vanessza Maja és Családi Alexandra</footer>
         </div>
     );

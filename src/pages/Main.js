@@ -13,7 +13,7 @@ export default function Main() {
     });
 
     return (
-        <div className="main">
+        <div className="main container-fluid col-md-12">
             <div id="welcome_banner"><img className="welcome" src="kepek/welcome_felirattal.jpg" alt="Description of the image" /></div>
 
         </div>
