@@ -1,21 +1,4 @@
-//import Table from 'react-bootstrap/Table';
-//import { useEffect, useState } from 'react';
-
 export default function FelhasznalokListazasa(props) {
-    /*
-        const [propsek, setpropsek] = useState([])
-        const [loading, setLoading] = useState(false)
-    
-        useEffect(() => {
-            setLoading(true)
-            fetch("http://127.0.0.1:8000/api/products")
-            .then(response => response.json())
-            .then(json => setpropsek(json))
-            .finally(() => {
-                setLoading(false)
-            })
-        }, [])
-    */
     return (
         <>
             <td>{props.product_id}</td>

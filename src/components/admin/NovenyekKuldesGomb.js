@@ -1,10 +1,9 @@
-export default function FelhasznalokListazasa(props) {
+export default function NovenyekKuldesGomb(props) {
 
     return (
         <>
-            <td> {props.id}</td>
+            <td>{props.scientific_name}</td>
             <td>{props.name}</td>
-            <td>{props.email}</td>
             <td>{props.permission}</td>
             <td><button>szerkesztés</button></td>
             <td><button>törlés</button></td>

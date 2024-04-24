@@ -2,11 +2,29 @@ import FelhasznalokListazasa from '../../components/admin/FelhasznalokListazasa'
 import { useGet } from "../../model/Axios";
 import Table from 'react-bootstrap/Table';
 
+import React, { useEffect } from 'react';
+import useAuthContext from '../../context/AuthContext';
+
 export default function FelhasznalokLista() {
-    const felhasznalok = useGet(`users`);
+    
+    const felhasznalok = useGet('users');
     console.log(felhasznalok)
+
+    const { user, getUser } = useAuthContext();
+    useEffect(() => {
+        console.log(user)
+        if (!user) {
+            getUser();
+        }
+    });
+
+    
+
+
     return (
         <div className="felhasznaloklista">
+            {user && (user.permission === 0 || user.permission === 1) ? (
+                <>
             <section>
                 <Table striped bordered hover>
                     <thead>
@@ -35,6 +53,9 @@ export default function FelhasznalokLista() {
                     </tbody>
                 </Table>
             </section>
+            </>) : (
+                <></>
+            )}
         </div>
     )
 }

@@ -14,7 +14,7 @@ export default function TermekekLista() {
         return (
             <div className="termekeklista">
                 <section>
-                    <Table striped bordered hover>
+                    <Table className='admintablak' striped bordered hover size="sm">
                         <thead>
                             <tr>
                                 <th>Termékkulcs</th>
