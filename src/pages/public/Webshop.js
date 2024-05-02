@@ -4,6 +4,8 @@ import TermekKartya from '../../components/public/webshop/TermekKartya.js';
 import './Webshop.css';
 import { useNavigate } from 'react-router';
 import { useGet } from "../../model/Axios";
+import Kereses from '../../components/public/Kereses.js';
+import Hirdetes from '../../components/public/Hirdetes.js';
 
 
 export default function Webshop() {
@@ -26,7 +28,9 @@ export default function Webshop() {
     } else {
 
         return (
-            <div className="webshop row mx-auto d-flex align-items-center justify-content-center">
+            <div className='row'>
+            <Kereses />
+            <div className="webshop row mx-auto d-flex align-items-center justify-content-center  col-md-8 col-sm-10">
 
                 {termekData.map((elem) => (
                     <TermekKartya
@@ -41,6 +45,8 @@ export default function Webshop() {
                         megnyit={megnyit}
                     />
                 ))}
+            </div>
+                <Hirdetes />
             </div>
         );
     }
