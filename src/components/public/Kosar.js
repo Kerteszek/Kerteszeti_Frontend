@@ -66,25 +66,55 @@ export default function Kosar() {
         const year = date.getFullYear();
         const month = String(date.getMonth() + 1).padStart(2, '0');
         const day = String(date.getDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        const seconds = String(date.getSeconds()).padStart(2, '0');
+        return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
     };
+
 
 
     const handlePurchaseClick = () => {
         setShowModal(true);
     };
 
+    const savedPurchaseDate = localStorage.getItem("purchaseDate");
+    const apihozDate = savedPurchaseDate.split(' ')[0];//ezzel elfogadja a baskend
+    //console.log(apihozDate)//OK megvan
+
 
     const handlePurchaseConfirmation = async () => {
         const currentDate = new Date();
         const formattedDate = formatDate(currentDate);
+        localStorage.setItem("purchaseDate", formattedDate);
+
         const vasarlasiAdatok = {
             buyer: user_id,
             shopping_date: formattedDate,
         };
 
         try {
-            await axios.post('api/purchases', vasarlasiAdatok);
+            const purchaseResponse = await axios.post('api/purchases', vasarlasiAdatok);
+            const response = await axios.get(`api/akt_vasarlas/${user_id}/${apihozDate}`);
+            const purchase_number = response.data[0].purchase_number;
+            console.log(purchase_number);
+
+            const purchaseItems = cartItems.map(item => ({
+                purchase_number: purchase_number,
+                product_id: item.termek_id,
+                quantity: item.mennyiseg
+            }));
+            console.log(purchaseItems)
+
+            for (const item of purchaseItems) {
+                try {
+                    await axios.post('api/purchase_items', item);
+                    console.log('Aktuális termék bekerült a PutchaseItem-be: ', item);
+                } catch (error) {
+                    console.error('Nem sikerült a PutchaseItem-be való post: ', error);
+                }
+            }
+            
             console.log('Sikeres vásárlás!');
             handleDeleteAll();
         } catch (error) {
@@ -93,6 +123,8 @@ export default function Kosar() {
 
         setShowModal(false);
     };
+
+
 
     const handleModalClose = () => {
         setShowModal(false);
