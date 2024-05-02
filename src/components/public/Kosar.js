@@ -11,6 +11,7 @@ export default function Kosar() {
     const [cartItems, setCartItems] = useState([]);
     const productImages = useGet('boritokep');
     const user_id = user ? user.id : null;
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         if (!user) {
@@ -69,14 +70,18 @@ export default function Kosar() {
     };
 
 
-    const handlePurchaseClick = async () => {
+    const handlePurchaseClick = () => {
+        setShowModal(true);
+    };
+
+
+    const handlePurchaseConfirmation = async () => {
         const currentDate = new Date();
         const formattedDate = formatDate(currentDate);
         const vasarlasiAdatok = {
             buyer: user_id,
             shopping_date: formattedDate,
         };
-        console.log(vasarlasiAdatok)
 
         try {
             await axios.post('api/purchases', vasarlasiAdatok);
@@ -85,7 +90,15 @@ export default function Kosar() {
         } catch (error) {
             console.error('Sikertelen vásárlás:', error);
         }
+
+        setShowModal(false);
     };
+
+    const handleModalClose = () => {
+        setShowModal(false);
+    };
+
+
     const [ujToken2, setUjToken] = useState("");
 
     const csrf = async () => {
@@ -96,6 +109,7 @@ export default function Kosar() {
             console.error("Hiba fetching CSRF token:", error);
         }
     };
+
 
     return (
         <div className="kosar">
@@ -133,6 +147,20 @@ export default function Kosar() {
                 </>
             ) : (
                 <p>A kosara üres!</p>
+            )}
+
+            {/* Modal */}
+            {showModal && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <h2>Vásárlás véglegesítése</h2>
+                        <p>Biztosan szeretné véglegesíteni a vásárlást?</p>
+                        <div>
+                            <button className="btn btn-danger" onClick={handlePurchaseConfirmation}>Vásárlás véglegesítése</button>
+                            <button className="btn btn-secondary" onClick={handleModalClose}>Mégsem</button>
+                        </div>
+                    </div>
+                </div>
             )}
         </div>
     );
