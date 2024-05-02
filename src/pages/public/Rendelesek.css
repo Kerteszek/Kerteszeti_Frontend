@@ -1,0 +1,33 @@
+.rendelesek {
+  margin: auto 15px;
+}
+
+.rendelesek-container {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.rendelesek-table {
+  margin-bottom: 20px;
+}
+
+.rendelesek-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rendelesek-table th,
+.rendelesek-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.rendelesek-table th {
+  background-color: #f2f2f2;
+}
+
+.rendelesek-table tfoot {
+  font-weight: bold;
+}
