@@ -10,15 +10,15 @@
   object-fit: cover;
 }
 
-.nagyKep .TermekKep {
+.nagyKep .TermekKep {  
   width: 100%;
   max-width: 450px;
   max-height: 450px;
 }
 
-/* .termekOldal {
-    background-color: lightblue;
-} */
+.termekOldal {
+    padding: 5px;
+}
 
 .kepGaleria {
   gap: 5px;

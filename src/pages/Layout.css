@@ -3,7 +3,7 @@ body {
 }
 
 header {
-  background-color: rgb(178, 238, 218);
+  background-color: rgb(97, 199, 134);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   color: white;
@@ -23,12 +23,14 @@ header {
   max-height: 200px;
 }
 
-.rightSide {
+.rightSide {  
   text-align: right;
 }
+#asBal {
+  padding-left: 20px;
+}
 
-.reklam {
- 
+.reklam { 
   background-repeat: repeat;
   background-size: cover;
 }
@@ -38,7 +40,7 @@ article {
 }
 
 aside {
-    background-color: rgba(139, 195, 74, 0.281);
+    background-color: rgba(139, 195, 74, 0.081);
 }
 footer {
   background-color: rgba(0, 0, 0, 0.37);

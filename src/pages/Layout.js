@@ -67,7 +67,7 @@ const Layout = () => {
                                     </NavDropdown>
                                 </>
                             ) : (
-                                <Container className="rightSide">
+                                <Container className="">
                                     <Nav.Link href="/login">Bejelentkezés</Nav.Link>
                                 </Container>
                             )}
