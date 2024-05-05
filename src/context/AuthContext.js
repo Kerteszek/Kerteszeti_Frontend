@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
     const getUser = async () => {
         try {
             const { data } = await axios.get("/api/user");
-            setUser(data);           
+            setUser(data);
         } catch (e) {
             console.log("Error a felhasználó adatainak lekérésekor: " + e);
         }
@@ -50,7 +50,6 @@ export const AuthProvider = ({ children }) => {
             });
         } catch (e) {
             console.error("Hiba kijelentkezés közben!")
-
         }
 
     };
@@ -76,9 +75,24 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    const changePassword = async (passwordData) => {
+        try {
+            console.log(passwordData)
+            await axios.post("/api/password_change", passwordData);
+            console.log("jelszó sikeresen megváltoztatva!");
+            setErrors({});
+        } catch (error) {
+            console.error("Hiba jelszó vááltás közben:", error);
+            if (error.response && error.response.status === 422) {
+                setErrors(error.response.data.errors);
+            }
+            throw error;
+        }
+    };
+
     return (
         <AuthContext.Provider
-            value={{ logout, loginRegister, errors, getUser, user }}
+            value={{ logout, loginRegister, errors, getUser, user, changePassword, setErrors }}
         >
             {children}
         </AuthContext.Provider>

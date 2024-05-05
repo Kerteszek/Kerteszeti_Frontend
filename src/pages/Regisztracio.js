@@ -9,7 +9,7 @@ export default function Regisztracion() {
     const [password_confirmation, setPasswordConfirmation] = useState("");
 
     const { loginRegister, errors } = useAuthContext();
-
+   
     const handleSubmit = async (event) => {
         event.preventDefault();
 
