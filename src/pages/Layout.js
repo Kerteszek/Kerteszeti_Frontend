@@ -35,9 +35,8 @@ const Layout = () => {
 
                             <NavDropdown title="Webshop" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="/webshop">Minden termék</NavDropdown.Item>
-                                <NavDropdown.Item href="/public">Aktualitások</NavDropdown.Item>
-                                <NavDropdown.Item href="/rendez">Növények</NavDropdown.Item>
-                                <NavDropdown.Item href="/valaszt">Virágok</NavDropdown.Item>
+                                <NavDropdown.Item href="/aktualitasok">Szezonális növények</NavDropdown.Item>
+                                <NavDropdown.Item href="/rozsak">Rózsák</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="/">Akciók</NavDropdown.Item>
                             </NavDropdown>
@@ -59,7 +58,7 @@ const Layout = () => {
                                         <NavDropdown.Item href="/adatlap">
                                             Adataim
                                         </NavDropdown.Item>
-                                        <NavDropdown.Item href="/rendelesek">Rendeléseim {user?.permission}</NavDropdown.Item>                                        
+                                        <NavDropdown.Item href="/rendelesek">Rendeléseim {user?.permission}</NavDropdown.Item>
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item className="text-danger" onClick={logout}>
                                             Kijelentkezés
@@ -99,7 +98,7 @@ const Layout = () => {
                 {/* Ide kerül majd az útvonalak/linkek által meghatározott tartalom */}
                 <Outlet />
             </article>
-           {/*  <aside id="asJobb" className="col-md-2 col-sm-1">
+            {/*  <aside id="asJobb" className="col-md-2 col-sm-1">
                 <Card.Img variant="top" className="reklam" src="kepek/banner.jpg" />
                         </aside> */}
             <footer className="col-md-12">Készítette: Dreilinger Vanessza Maja és Családi Alexandra</footer>

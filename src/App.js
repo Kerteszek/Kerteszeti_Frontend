@@ -20,6 +20,8 @@ import Kosar from "./components/public/Kosar";
 import Rendelesek from "./pages/public/Rendelesek";
 import useAuthContext from "./context/AuthContext";
 import { KosarbaProvider } from "./context/KosarbaContext";
+import Aktualitasok from "./pages/public/Aktualitasok";
+import Rozsak from "./pages/public/Rozsak";
 
 function App() {
 
@@ -41,6 +43,8 @@ function App() {
         <Route path="Public" element={<Public />} />
         <Route path="AboutUs" element={<AboutUs />} />
         <Route path="Webshop" element={<Webshop />} />
+        <Route path="aktualitasok" element={<Aktualitasok />} />
+        <Route path="rozsak" element={<Rozsak />} />
         <Route path="Login" element={<Login />} />
         <Route path="regisztracio" element={<Regisztracion />} />
         <Route path="adatlap" element={<Adatlap />} />
